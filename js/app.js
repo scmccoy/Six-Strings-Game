@@ -1,1 +1,2 @@
-// connect app to html index
+//= require angular-ui-router
+//= require angular-local-storage
