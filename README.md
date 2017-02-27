@@ -1,1 +1,1 @@
-# sixStings
+# sixStings aka six$trings
