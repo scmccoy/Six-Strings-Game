@@ -4,8 +4,6 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('ToDontApp', ['LocalStorageModule']);
-
 	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/'); // if url does not exist
