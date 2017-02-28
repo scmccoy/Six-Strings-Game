@@ -1,24 +1,197 @@
-<!doctype html>
+<!doctype html ng-app='sixStrings'>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Week Project</title>
-
-
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>six$trings | a word game</title>
+  <link href="https://fonts.googleapis.com/css?family=Faster+One|Poppins:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles/app.css">
 </head>
 
 <body>
-    <header>
+  <div class='page-container'>
 
+    <header>
+      <h1 class=''>six$trings</h1>
+      <nav>
+        <ul>
+          <li>restart round</li>
+          <li>logout user</li>
+          <li>new game</li>
+        </ul>
+      </nav>
     </header>
 
 
+    <main>
+      <section class='login-wrapper'>
+
+        <form id='loginForm' class='login-form' name='loginForm'>
+          <h2>login to six$trings to play</h2>
+          <input type='text' placeholder='username'>
+          <input type='password' placeholder='password'>
+          <button type='submit'>login</button>
+        </form>
+      </section>
 
 
+      <div class='game-play is-hidden'>
+
+        <article class='word-setup-wrapper'>
+          <h3 class='timer'>00:00</h3>
+          <table class='word-table'>
+            <tr class='word-row-headings'>
+              <th class='word-heading'>#</th>
+              <th class='word-heading'>clues</th>
+              <th class='word-heading'>solutions</th>
+            </tr>
+            <tr class='word-row-words'>
+              <td>1</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+            <tr class='word-row-words'>
+              <td>2</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+            <tr class='word-row-words'>
+              <td>3</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+            <tr class='word-row-words'>
+              <td>4</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+            <tr class='word-row-words'>
+              <td>5</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+            <tr class='word-row-words'>
+              <td>6</td>
+              <td class='word-clues'>this is a longish clue</td>
+              <td class='word-word'>hippopotomus</td>
+            </tr>
+          </table>
+        </article>
+        </section>
+
+        <section class='guess-section'>
+          <div class='guess-wrapper'>
+            <form id='guessForm' class='guess-form' name='guessForm'>
+              <input class='user-guess' placeholder='guess' />
+              <button class='clearguess-btn'>X</button>
+              <button class='shuffle-btn'>shuffle</button>
+            </form>
+          </div>
+        </section>
+
+        <section class='tile-section'>
+          <article class='tile-wrapper'>
+            <span>ABC</span>
+            <span>EX</span>
+            <span>ML</span>
+            <span>POC</span>
+            <span>ABC</span>
+            <span>UI</span>
+            <span>SHE</span>
+            <span>AB</span>
+            <span>KLG</span>
+            <span>KWQ</span>
+            <span>AB</span>
+            <span>XY</span>
+            <span>LOO</span>
+            <span>PEE</span>
+            <span>IL</span>
+            <span>ED</span>
+          </article>
+        </section>
+      </div>
 
 
+      <section class='win-section is-hidden'>
+        <h2>congrats username</h2>
+        <h3> heres a cookie</h3>
+        <img src='./img/cookie.png' alt='cookie' />
+        <p>time to win: ###</p>
+        <p>you have won ## games</p>
+        <p>you have played ## games</p>
+        <button>leaderboard</button>
+      </section>
+
+      <section class='leaderboard-section is-hidden'>
+        <h2>six$trings leaderboard</h2>
+        <table>
+          <tr>
+            <th class='leaderboard-heading'>#</th>
+            <th class='leaderboard-heading'>username</th>
+            <th class='leaderboard-heading'>time</th>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>1</td>
+            <td class='leaderboard-entry'>hippo</td>
+            <td class='leaderboard-entry'>3:40</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>2</td>
+            <td class='leaderboard-entry'>chicken</td>
+            <td class='leaderboard-entry'>3:50</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>3</td>
+            <td class='leaderboard-entry'>turkey</td>
+            <td class='leaderboard-entry'>3:55</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>4</td>
+            <td class='leaderboard-entry'>squab</td>
+            <td class='leaderboard-entry'>4:00</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>5</td>
+            <td class='leaderboard-entry'>peacock</td>
+            <td class='leaderboard-entry'>4:10</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>6</td>
+            <td class='leaderboard-entry'>pangolin</td>
+            <td class='leaderboard-entry'>4:20</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>7</td>
+            <td class='leaderboard-entry'>frog</td>
+            <td class='leaderboard-entry'>4:30</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>8</td>
+            <td class='leaderboard-entry'>swan</td>
+            <td class='leaderboard-entry'>4:40</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>9</td>
+            <td class='leaderboard-entry'>iguana</td>
+            <td class='leaderboard-entry'>5:00</td>
+          </tr>
+          <tr>
+            <td class='leaderboard-entry'>10</td>
+            <td class='leaderboard-entry'>clown</td>
+            <td class='leaderboard-entry'>5:10</td>
+          </tr>
+        </table>
+        <button>play again</button>
+      </section>
+
+
+    </main>
+    <footer>
+      &copy; Shadval Productions 2017 | all rights reserved
+    </footer>
+
+  </div>
 </body>
 <!-- <script src="./src/js/vendor/angular.min.js"></script> -->
 <script src="./src/js/vendor/angular-ui-router.min.js"></script>

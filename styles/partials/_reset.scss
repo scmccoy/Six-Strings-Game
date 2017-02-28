@@ -1,3 +1,8 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,10 +23,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-	height: 100vh;
 	line-height: 1;
-	width: 100vw;
 }
 ol, ul {
 	list-style: none;
@@ -40,4 +48,11 @@ table {
 }
 *, *:before, *:after {
   box-sizing: border-box;
+}
+button:focus, textarea:focus {
+    outline: none;
+}
+img {
+	max-width: 100%;
+	width:100%;
 }

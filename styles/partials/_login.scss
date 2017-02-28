@@ -1,0 +1,31 @@
+.login-form {
+    margin: 5px auto;
+    min-height: 300px;
+
+    h2 {
+        color: $orange;
+        font: 2rem/1 $fast;
+        margin-top: 60px;
+    }
+
+    input {
+        background-color: $gold;
+        border: 2px solid $gold;
+        color: black;
+        font: 700 1.4rem/1 $pop;
+        margin-top: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 240px;
+    }
+
+    button {
+        @include btn;
+        border: none;
+        display: block;
+        font: 700 1.4rem/1 $pop;
+        margin: 10px auto;
+        max-width: 200px;
+        padding: 20px;
+    }
+}
