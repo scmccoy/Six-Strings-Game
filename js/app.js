@@ -1,6 +1,8 @@
+/* //= require angular-rails-template
 //= require angular
 //= require angular-ui-router
-//= require angular-local-storage
+//= require angular-local-storage */
+// ['ui.router', 'templates']
 (function(ng) {
 	"use strict";
 
