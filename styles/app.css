@@ -1,0 +1,328 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+button:focus, textarea:focus {
+  outline: none; }
+
+img {
+  max-width: 100%;
+  width: 100%; }
+
+nav ul {
+  float: right; }
+nav li {
+  background: rgba(80, 49, 13, 0.7);
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 10px 0 0;
+  max-width: 75px;
+  padding: 7px 5px;
+  transition: 0.2s ease;
+  display: inline-block; }
+  nav li:hover {
+    background: #50310d;
+    color: #fff8ee;
+    transform: scale(1.05); }
+
+header h1 {
+  float: left;
+  font: 4rem/1 "Faster One", cursive;
+  text-align: left; }
+
+.login-form {
+  margin: 5px auto;
+  min-height: 300px; }
+  .login-form h2 {
+    color: #f0874c;
+    font: 2rem/1 "Faster One", cursive;
+    margin-top: 60px; }
+  .login-form input {
+    background-color: #ffe38e;
+    border: 2px solid #ffe38e;
+    color: black;
+    font: 700 1.4rem/1 "Poppins", sans-serif;
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 240px; }
+  .login-form button {
+    background: rgba(80, 49, 13, 0.7);
+    border-radius: 10px;
+    color: #ffe38e;
+    line-height: 1;
+    margin: 10px 0 0;
+    max-width: 75px;
+    padding: 7px 5px;
+    transition: 0.2s ease;
+    border: none;
+    display: block;
+    font: 700 1.4rem/1 "Poppins", sans-serif;
+    margin: 10px auto;
+    max-width: 200px;
+    padding: 20px; }
+    .login-form button:hover {
+      background: #50310d;
+      color: #fff8ee;
+      transform: scale(1.05); }
+
+.word-setup-wrapper h3 {
+  background: rgba(80, 49, 13, 0.7);
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 10px 0 0;
+  max-width: 75px;
+  padding: 7px 5px;
+  transition: 0.2s ease;
+  background: #bf2929;
+  font-size: 1.3rem;
+  height: 50px;
+  margin: 15px auto;
+  padding-top: 18px;
+  width: 75px; }
+  .word-setup-wrapper h3:hover {
+    background: #50310d;
+    color: #fff8ee;
+    transform: scale(1.05); }
+  .word-setup-wrapper h3:hover {
+    transform: none;
+    background: #bf2929; }
+.word-setup-wrapper table {
+  margin: 0 auto;
+  width: 400px; }
+
+.word-heading {
+  border-bottom: 2px solid #50310d;
+  font: 700 1.5rem/1 "Poppins", sans-serif; }
+
+.word-row-words {
+  line-height: 2; }
+
+.word-word {
+  text-transform: uppercase; }
+
+.tile-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 25px;
+  width: 400px; }
+  .tile-wrapper span {
+    background: rgba(80, 49, 13, 0.7);
+    border-radius: 10px;
+    color: #ffe38e;
+    line-height: 1;
+    margin: 10px 0 0;
+    max-width: 75px;
+    padding: 7px 5px;
+    transition: 0.2s ease;
+    font-size: 1.3rem;
+    height: 50px;
+    margin: 7px;
+    padding-top: 18px;
+    width: 75px; }
+    .tile-wrapper span:hover {
+      background: #50310d;
+      color: #fff8ee;
+      transform: scale(1.05); }
+
+.guess-form {
+  margin: 5px auto; }
+  .guess-form input {
+    background-color: #ffe38e;
+    border: 2px solid #ffe38e;
+    color: black;
+    font: 700 1.4rem/1 "Poppins", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    width: 240px; }
+
+.clearguess-btn {
+  background: rgba(80, 49, 13, 0.7);
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 10px 0 0;
+  max-width: 75px;
+  padding: 7px 5px;
+  transition: 0.2s ease;
+  background: #bf2929;
+  border-radius: 0;
+  font-size: 1.4rem; }
+  .clearguess-btn:hover {
+    background: #50310d;
+    color: #fff8ee;
+    transform: scale(1.05); }
+
+.shuffle-btn {
+  background: rgba(80, 49, 13, 0.7);
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 10px 0 0;
+  max-width: 75px;
+  padding: 7px 5px;
+  transition: 0.2s ease;
+  border-radius: 0;
+  text-transform: uppercase; }
+  .shuffle-btn:hover {
+    background: #50310d;
+    color: #fff8ee;
+    transform: scale(1.05); }
+
+.win-section {
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto 60px;
+  min-height: 300px; }
+  .win-section h2 {
+    color: #f0874c;
+    font: 2rem/1 "Faster One", cursive;
+    margin-top: 60px; }
+  .win-section h3 {
+    color: #50310d;
+    font-style: italic; }
+  .win-section img {
+    height: 250px;
+    width: 250px; }
+  .win-section input {
+    background-color: #ffe38e;
+    border: 2px solid #ffe38e;
+    color: black;
+    margin-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 240px; }
+  .win-section button {
+    background: rgba(80, 49, 13, 0.7);
+    border-radius: 10px;
+    color: #ffe38e;
+    line-height: 1;
+    margin: 10px 0 0;
+    max-width: 75px;
+    padding: 7px 5px;
+    transition: 0.2s ease;
+    border: none;
+    display: block;
+    font: 700 1.4rem/1 "Poppins", sans-serif;
+    margin: 10px auto;
+    max-width: 200px;
+    padding: 20px; }
+    .win-section button:hover {
+      background: #50310d;
+      color: #fff8ee;
+      transform: scale(1.05); }
+
+.leaderboard-section {
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto 60px;
+  min-height: 300px; }
+  .leaderboard-section h2 {
+    color: #f0874c;
+    font: 2rem/1 "Faster One", cursive;
+    margin-top: 60px; }
+  .leaderboard-section table {
+    border-bottom: 2px solid #50310d;
+    margin: 0 auto;
+    width: 400px; }
+  .leaderboard-section button {
+    background: rgba(80, 49, 13, 0.7);
+    border-radius: 10px;
+    color: #ffe38e;
+    line-height: 1;
+    margin: 10px 0 0;
+    max-width: 75px;
+    padding: 7px 5px;
+    transition: 0.2s ease;
+    border: none;
+    display: block;
+    font: 700 1.4rem/1 "Poppins", sans-serif;
+    margin: 20px auto;
+    max-width: 200px;
+    padding: 20px; }
+    .leaderboard-section button:hover {
+      background: #50310d;
+      color: #fff8ee;
+      transform: scale(1.05); }
+
+.leaderboard-heading {
+  border-bottom: 2px solid #50310d;
+  font: 700 1.5rem/1 "Poppins", sans-serif;
+  padding-top: 25px; }
+
+.leaderboard-entry {
+  font: 400 1rem/1.5 "Poppins", sans-serif; }
+
+.is-hidden {
+  display: none; }
+
+body {
+  background: #50310d url("../img/strings1.jpg") center center/cover no-repeat fixed;
+  font: 16px/1.6 "Poppins", sans-serif;
+  text-align: center;
+  width: 100%; }
+
+.page-container {
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: 750px; }
+
+main {
+  background: rgba(255, 248, 238, 0.9);
+  border: 5px solid #50310d;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px #50310d;
+  clear: both; }
+
+footer {
+  color: #ffe38e;
+  font: 700 1rem/1 "Poppins", sans-serif; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,37 @@
+.leaderboard-section {
+    font: 700 1.4rem/1 $pop;
+    margin: 10px auto 60px;
+    min-height: 300px;
+
+    h2 {
+        color: $orange;
+        font: 2rem/1 $fast;
+        margin-top: 60px;
+    }
+
+    table {
+        border-bottom: 2px solid $brown;
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    button {
+        @include btn;
+        border: none;
+        display: block;
+        font: 700 1.4rem/1 $pop;
+        margin: 20px auto;
+        max-width: 200px;
+        padding: 20px;
+    }
+}
+
+.leaderboard-heading {
+    border-bottom: 2px solid $brown;
+    font: 700 1.5rem/1 $pop;
+    padding-top: 25px;
+}
+
+.leaderboard-entry {
+    font: 400 1rem/1.5 $pop;
+}

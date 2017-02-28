@@ -1,0 +1,78 @@
+.word-setup-wrapper {
+    h3 {
+        @include btn;
+        background: $red;
+        font-size: 1.3rem;
+        height: 50px;
+        margin: 15px auto;
+        padding-top: 18px;
+        width: 75px;
+
+        &:hover {
+            transform: none;
+            background: $red;
+        }
+    }
+
+    table {
+        margin: 0 auto;
+        width: 400px;
+    }
+}
+
+.word-heading {
+    border-bottom: 2px solid $brown;
+    font: 700 1.5rem/1 $pop;
+}
+
+.word-row-words {
+    line-height: 2;
+}
+
+.word-word {
+    text-transform: uppercase;
+}
+
+.tile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 25px;
+    width: 400px;
+
+    span {
+        @include btn;
+        font-size: 1.3rem;
+        height: 50px;
+        margin: 7px;
+        padding-top: 18px;
+        width: 75px;
+    }
+}
+
+.guess-form {
+    margin: 5px auto;
+
+    input {
+        background-color: $gold;
+        border: 2px solid $gold;
+        color: black;
+        font: 700 1.4rem/1 $pop;
+        text-align: center;
+        text-transform: uppercase;
+        width: 240px;
+    }
+}
+
+.clearguess-btn {
+    @include btn;
+    background: $red;
+    border-radius: 0;
+    font-size: 1.4rem;
+}
+
+.shuffle-btn {
+    @include btn;
+    border-radius: 0;
+    text-transform: uppercase;
+}

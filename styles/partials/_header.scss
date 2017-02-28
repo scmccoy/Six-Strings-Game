@@ -1,0 +1,18 @@
+nav {
+    ul {
+        float: right;
+    }
+
+    li {
+        @include btn;
+        display: inline-block;
+    }
+}
+
+header {
+    h1 {
+        float: left;
+        font: 4rem/1 $fast;
+        text-align: left;
+    }
+}
