@@ -2,7 +2,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp', ['ui.router']);
+	ng.module('sixStringApp', ['ui.router', 'templates']);
 	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/'); // if url does not exist
@@ -16,15 +16,15 @@
 		}).state('gameParent.loginCtrl', {
 			url: 'login',
 			controller: 'LoginController as logCtrl',
-			templateUrl: './templates/login.html'
+			templateUrl: 'login.html'
 		}).state('gameParent.gameCtrl', {
 			url: 'game',
 			controller: 'GameController as gameCtrl',
-			templateUrl: './templates/game.html'
+			templateUrl: 'game.html'
 		}).state('gameParent.optCtrl', {
 			url: 'options',
 			controller: 'OptionsController as optCtrl',
-			templateUrl: './templates/options.html'
+			templateUrl: 'options.html'
 		});
 	});
 
