@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+CSV.foreach('db/data/puzzles', col_sep: ';') do |row|
+  puzzle = Puzzle.create(
+    words: row[0],
+    clues: row[1]
+  )
+end
+
+# sql = 'ALTER SEQUENCE puzzles_id_seq RESTART WITH ' + (Puzzle.all.count).to_s
+# ActiveRecord::Base.connection.execute(sql)
