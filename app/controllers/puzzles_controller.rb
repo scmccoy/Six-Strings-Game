@@ -1,11 +1,10 @@
 class PuzzlesController < ApplicationController
-  # before_action :set_puzzle, only: [:show, :edit, :update, :destroy]
+  before_action :set_puzzle, only: [:show, :edit, :update, :destroy]
 
   # GET /puzzles
   # GET /puzzles.json
   def index
-    @puzzles = Puzzle.all.sample
-    render json: @puzzles
+    @puzzles = Puzzle.all
   end
 
   # GET /puzzles/1
@@ -29,8 +28,8 @@ class PuzzlesController < ApplicationController
 
     respond_to do |format|
       if @puzzle.save
-        # format.html { redirect_to @puzzle, notice: 'Puzzle was successfully created.' }
-        format.json { render json: @puzzle, status: :created, location: @puzzle }
+        format.html { redirect_to @puzzle, notice: 'Puzzle was successfully created.' }
+        format.json { render :show, status: :created, location: @puzzle }
       else
         format.html { render :new }
         format.json { render json: @puzzle.errors, status: :unprocessable_entity }
@@ -70,6 +69,6 @@ class PuzzlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def puzzle_params
-      params.require(:puzzle).permit(:words, :clues)
+      params.require(:puzzle).permit(:word1, :word2, :word3, :word4, :word5, :word6)
     end
 end
