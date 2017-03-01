@@ -7,7 +7,7 @@
 	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/');
-		// $urlRouterProvider.when('/', '/' + 'login');
+		$urlRouterProvider.when('/', '/' + 'login');
 		$stateProvider.state('gameParent', {
 			url: '/',
 			abstract: true,
