@@ -6,6 +6,3 @@ CSV.foreach('db/data/puzzles', col_sep: ';') do |row|
     clues: row[1]
   )
 end
-
-# sql = 'ALTER SEQUENCE puzzles_id_seq RESTART WITH ' + (Puzzle.all.count).to_s
-# ActiveRecord::Base.connection.execute(sql)
