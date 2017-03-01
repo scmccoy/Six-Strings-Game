@@ -39,6 +39,42 @@ modulusLength(round);
 //clues - x6. Has number in each to mark
 ///////////////////////////////////////
 //**
+=======
+let mixedParts = [];
+let mixedClues = [];
+const wordClue = {
+	"NOBLE": "Periodic table gas",
+	"OUSTS": "Removes from power",
+	"OTHERS": "Not yourself",
+	"SECULAR": "Not religious",
+	"BUBBLES": "Oxygen in water",
+	"KNOWLEDGE": "School gains"
+};
+
+function modulusLength(wordClue) {
+	Object.keys(wordClue).forEach(function(i) {
+		// if ((i % 2) == 1) {}
+		if (i.length === 5) {
+			wordCountFive(i);
+		} else if (i.length === 6) {
+			wordCountSix(i);
+		} else if (i.length === 7) {
+			wordCountSeven(i);
+		} else if (i.length === 8) {
+			wordCountEight(i);
+		} else if (i.length === 9) {
+			wordCountNine(i);
+		} else {
+			console.log('Error in wordBreaker');
+		}
+		mixedClues.push(wordClue[i]);
+		// console.log('key ', i);
+		// console.log('value', wordClue[i]);
+	});
+}
+
+///////////////////////////////////////
+//** RANDOM FOR TRUE/FALSE
 ///////////////////////////////////////
 //** 50% chance of true / false
 function randomTruth() {
@@ -48,6 +84,7 @@ function randomTruth() {
 		return false;
 	}
 }
+<<<<<<< HEAD
 //** Sum of an Array (all 6 words)
 let total = 0;
 
@@ -98,7 +135,6 @@ function wordBreaker(wordChooser) {
 // 		return false;
 // 	}
 // } // testing copy
-
 //** Five letter word
 function wordCountFive(fiveLetterWord) {
 	console.log('wordcount 5 Arg ', fiveLetterWord);
@@ -154,6 +190,7 @@ function wordCountNine(nineLetterWord) {
 	mixedParts.push(nineLetterWord.slice(3, 6));
 	mixedParts.push(nineLetterWord.slice(6, 9));
 }
+<<<<<<< HEAD
 wordBreaker(words);
 console.log('mixedparts ', mixedParts);
 //** assigning vars to clues
@@ -171,3 +208,7 @@ console.log('6 ltr clue => ', sixLetterClue);
 console.log('7 ltr clue => ', sevenLetterClue);
 console.log('8 ltr clue => ', eightLetterClue);
 console.log('9 ltr clue => ', nineLetterClue);
+=======
+modulusLength(wordClue);
+console.log('mixedparts ', mixedParts);
+console.log('mixedClues ', mixedClues);
