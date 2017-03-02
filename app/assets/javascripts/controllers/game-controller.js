@@ -27,6 +27,20 @@
 		//** FUNCTIONS FOR Tile Pick
 		///////////////////////////////////////
 
+		$scope.checkGuess = function() {
+			$scope.myGuess = $('.user-guess').text();
+			for (let index = 0; index < 6; index++) {
+				if ($scope.myGuess === $scope.currentObj[index]) {
+					console.log($scope.currentObj[index]);
+					console.log('CORRRECT');
+				}
+				console.log('in loop');
+			}
+
+			console.log('myGuess ==> ', $scope.myGuess);
+		};
+
+
 		$scope.tilePick = function(myPick) {
 			console.log('myPick --> ', myPick);
 			$('.user-guess').append(myPick);
