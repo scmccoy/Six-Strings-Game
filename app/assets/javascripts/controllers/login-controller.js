@@ -1,7 +1,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LoginController', function() {
+	ng.module('sixStringApp').controller('LoginController', function($scope) {
 		console.log('in LoginController');
 		$scope.userInput = []; // user login credentials Array
 		$scope.inputInfo = { //
