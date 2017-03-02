@@ -9,7 +9,7 @@
 // 	"KNOWLEDGE": "School gains"
 // };
 //
-// function modulusLength(wordClue) {
+// function wordTheDestructor(wordClue) {
 // 	Object.keys(wordClue).forEach(function(i) {
 // 		// if ((i % 2) == 1) {}
 // 		if (i.length === 5) {
@@ -98,6 +98,6 @@
 // 	mixedParts.push(nineLetterWord.slice(3, 6));
 // 	mixedParts.push(nineLetterWord.slice(6, 9));
 // }
-// modulusLength(wordClue);
+// wordTheDestructor(wordClue);
 // console.log('mixedparts ', mixedParts);
 // console.log('mixedClues ', mixedClues);
