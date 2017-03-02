@@ -1,64 +1,49 @@
 class PuzzlesController < ApplicationController
-  before_action :set_puzzle, only: [:show, :edit, :update, :destroy]
+  before_action :set_puzzle, only: [:show, :update, :destroy]
 
   # GET /puzzles
-  # GET /puzzles.json
   def index
     @puzzles = Puzzle.all
+
+    render json: @puzzles
+  end
+
+  # GET /puzzles/random
+  def random
+    @random = Puzzle.all.sample
+    @words = split_clues(@random)
+
+    render json: @words
   end
 
   # GET /puzzles/1
-  # GET /puzzles/1.json
   def show
-  end
-
-  # GET /puzzles/new
-  def new
-    @puzzle = Puzzle.new
-  end
-
-  # GET /puzzles/1/edit
-  def edit
+    render json: @puzzle
   end
 
   # POST /puzzles
-  # POST /puzzles.json
   def create
     @puzzle = Puzzle.new(puzzle_params)
 
-    respond_to do |format|
-      if @puzzle.save
-        format.html { redirect_to @puzzle, notice: 'Puzzle was successfully created.' }
-        format.json { render :show, status: :created, location: @puzzle }
-      else
-        format.html { render :new }
-        format.json { render json: @puzzle.errors, status: :unprocessable_entity }
-      end
+    if @puzzle.save
+      render json: @puzzle, status: :created, location: @puzzle
+    else
+      render json: @puzzle.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /puzzles/1
-  # PATCH/PUT /puzzles/1.json
   def update
-    respond_to do |format|
-      if @puzzle.update(puzzle_params)
-        format.html { redirect_to @puzzle, notice: 'Puzzle was successfully updated.' }
-        format.json { render :show, status: :ok, location: @puzzle }
-      else
-        format.html { render :edit }
-        format.json { render json: @puzzle.errors, status: :unprocessable_entity }
-      end
+    if @puzzle.update(puzzle_params)
+      render json: @puzzle
+    else
+      render json: @puzzle.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /puzzles/1
-  # DELETE /puzzles/1.json
   def destroy
     @puzzle.destroy
-    respond_to do |format|
-      format.html { redirect_to puzzles_url, notice: 'Puzzle was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
@@ -67,8 +52,22 @@ class PuzzlesController < ApplicationController
       @puzzle = Puzzle.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def split_clues(puzzle)
+      word1 = puzzle.word1.split ':'
+      word2 = puzzle.word2.split ':'
+      word3 = puzzle.word3.split ':'
+      word4 = puzzle.word4.split ':'
+      word5 = puzzle.word5.split ':'
+      word6 = puzzle.word6.split ':'
+
+      {
+        word1[0] => word1[1], word2[0] => word2[1], word3[0] => word3[1],
+        word4[0] => word4[1], word5[0] => word5[1], word6[0] => word6[1]
+      }
+    end
+
+    # Only allow a trusted parameter "white list" through.
     def puzzle_params
-      params.require(:puzzle).permit(:word1, :word2, :word3, :word4, :word5, :word6)
+      params.fetch(:puzzle, {})
     end
 end

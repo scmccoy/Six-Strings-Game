@@ -3,9 +3,9 @@
 @import 'partials/mixins';
 @import 'partials/header';
 @import 'partials/login';
-@import 'partials/game';
 @import 'partials/wins';
 @import 'partials/leaderboard';
+@import 'partials/game';
 @import 'partials/modifiers';
 
 body {
@@ -15,10 +15,19 @@ body {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: $gold;
+
+    &:hover {
+        color: $white;
+    }
+}
+
 .page-container {
     border-radius: 20px;
     margin: 0 auto;
-    max-width: 750px;
+    max-width: 500px;
 }
 
 main {
@@ -28,7 +37,34 @@ main {
     box-shadow: 1px 1px 20px $brown;
     clear: both;
 }
+
+.welcome-screen {
+    h1 {
+        color: $orange;
+        font: 2rem/1 $fast;
+    }
+    ol li {
+      text-align: left;
+      margin: 10px 50px 10px;
+      list-style-type: decimal;
+    }
+
+    .start-btn {
+        @include btn;
+        border: none;
+        display: block;
+        font: 700 1.4rem/1 $pop;
+        margin: 10px auto;
+        max-width: 200px;
+        padding: 20px;
+    }
+    .tile-wrapper {
+      width: 300px;
+      margin: 0 auto;
+    }
+}
+
 footer {
-  color: $gold;
-  font: 700 1rem/1 $pop;
+    color: $gold;
+    font: 700 1rem/1 $pop;
 }

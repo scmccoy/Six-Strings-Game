@@ -1,9 +1,8 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LoginController', function($scope, $q, $state, dataService) {
+	ng.module('sixStringApp').controller('LoginController', function($scope) {
 		console.log('in LoginController');
-
 		$scope.userInput = []; // user login credentials Array
 		$scope.inputInfo = { //
 			username: '',
@@ -23,5 +22,6 @@
 	// 	console.log(error);
 	// });
 
+	// });
 
 })(angular);

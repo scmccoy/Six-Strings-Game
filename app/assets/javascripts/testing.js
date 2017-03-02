@@ -1,10 +1,76 @@
-// // test only - delete for production
-// const words = ['tiger', 'sheep', 'badger', 'giraffe', 'platypus', 'porcupine'];
-// //words. 5x2, 1x6, 1x7, 1x8 & 1x9
-// const clues = ['this word has five letters', 'this word has five letters too', 'this word has six letters', 'this word has seven letters', 'this word has eight letters', 'this word has nine letters'];
+// // // test only - delete for production
+// // const words = ['tiger', 'sheep', 'badger', 'giraffe', 'platypus', 'porcupine'];
+// // //words. 5x2, 1x6, 1x7, 1x8 & 1x9
+// // const clues = ['this word has five letters', 'this word has five letters too', 'this word has six letters', 'this word has seven letters', 'this word has eight letters', 'this word has nine letters'];
+// //
+// // const round = {
+// //   "NOBLE":"Periodic table gas",
+// //   "OUSTS":"Removes from power",
+// //   "OTHERS":"Not yourself",
+// //   "SECULAR":"Not religious",
+// //   "BUBBLES":"Oxygen in water",
+// //   "KNOWLEDGE":"School gains"
+// // };
+// //
+// // let word = 'NOBLE';
+// //
+// // function modulusLength(round) {
+// //   Object.keys(round).forEach(function(i) {
+// //     if ((i % 2) == 1) {
+// //     }
+// //
+// // });
+// // }
+// //
+// // modulusLength(round);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // //clues - x6. Has number in each to mark
 // ///////////////////////////////////////
 // //**
+//
+// let mixedParts = [];
+// let mixedClues = [];
+// const wordClue = {
+// 	"NOBLE": "Periodic table gas",
+// 	"OUSTS": "Removes from power",
+// 	"OTHERS": "Not yourself",
+// 	"SECULAR": "Not religious",
+// 	"BUBBLES": "Oxygen in water",
+// 	"KNOWLEDGE": "School gains"
+// };
+//
+// function modulusLength(wordClue) {
+// 	Object.keys(wordClue).forEach(function(i) {
+// 		// if ((i % 2) == 1) {}
+// 		if (i.length === 5) {
+// 			wordCountFive(i);
+// 		} else if (i.length === 6) {
+// 			wordCountSix(i);
+// 		} else if (i.length === 7) {
+// 			wordCountSeven(i);
+// 		} else if (i.length === 8) {
+// 			wordCountEight(i);
+// 		} else if (i.length === 9) {
+// 			wordCountNine(i);
+// 		} else {
+// 			console.log('Error in wordBreaker');
+// 		}
+// 		mixedClues.push(wordClue[i]);
+// 		// console.log('key ', i);
+// 		// console.log('value', wordClue[i]);
+// 	});
+// }
+//
+// ///////////////////////////////////////
+// //** RANDOM FOR TRUE/FALSE
 // ///////////////////////////////////////
 // //** 50% chance of true / false
 // function randomTruth() {
@@ -56,6 +122,7 @@
 // 	}
 // }
 //
+//
 // // function randomTruth() { // testing copy
 // // 	if (Math.random() > 0.5) {
 // // 		return true;
@@ -63,7 +130,6 @@
 // // 		return false;
 // // 	}
 // // } // testing copy
-//
 // //** Five letter word
 // function wordCountFive(fiveLetterWord) {
 // 	console.log('wordcount 5 Arg ', fiveLetterWord);
@@ -136,3 +202,7 @@
 // console.log('7 ltr clue => ', sevenLetterClue);
 // console.log('8 ltr clue => ', eightLetterClue);
 // console.log('9 ltr clue => ', nineLetterClue);
+//
+// modulusLength(wordClue);
+// console.log('mixedparts ', mixedParts);
+// console.log('mixedClues ', mixedClues);
