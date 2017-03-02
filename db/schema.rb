@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170302194716) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -48,4 +49,6 @@ ActiveRecord::Schema.define(version: 20170302194716) do
 
 =======
 >>>>>>> a91a004dec2879d39687c4e45aef510608803075
+=======
+>>>>>>> refs/remotes/origin/master
 end
