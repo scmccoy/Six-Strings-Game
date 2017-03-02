@@ -9,43 +9,20 @@
                 <th class="word-heading">clues</th>
                 <th class="word-heading">solutions</th>
             </tr>
-            <tr class="word-row-words">
-                <td>1</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
+            <!--  ng-repeat="(key, value) in currentObj" -->
+            <tr class="word-row-words" ng-repeat="(key, value) in currentObj">
+                <td>{{$index + 1}}</td>
+                <td class="word-clues">{{value}}</td>
+                <td class="word-word">{{key}}</td>
             </tr>
-            <tr class="word-row-words">
-                <td>2</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
-            </tr>
-            <tr class="word-row-words">
-                <td>3</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
-            </tr>
-            <tr class="word-row-words">
-                <td>4</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
-            </tr>
-            <tr class="word-row-words">
-                <td>5</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
-            </tr>
-            <tr class="word-row-words">
-                <td>6</td>
-                <td class="word-clues">this is a longish clue</td>
-                <td class="word-word">letters</td>
-            </tr>
+
         </table>
     </article>
 
     <section class="guess-section">
         <div class="guess-wrapper">
             <form id="guessForm" class="guess-form" name="guessForm">
-                <p class="user-guess" placeholder="guess">hippopots</p>
+                <p class="user-guess" placeholder="guess"></p>
                 <button class="clearguess-btn">X</button>
                 <button class="guess-btn">guess</button>
             </form>
