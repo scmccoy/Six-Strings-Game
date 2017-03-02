@@ -9,7 +9,7 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery/dist/jquery
 //= require angular/angular
 //= require angular-rails-templates
 //= require angular-local-storage/dist/angular-local-storage
