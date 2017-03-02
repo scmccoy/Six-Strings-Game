@@ -4,16 +4,25 @@
 	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope) {
 		console.log('in GameController');
 
-		$q.when(dataService.get('http://localhost:3000/puzzles')).then((response) => {
+		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
 			this.getPuzzle = response;
 			console.log(this.getPuzzle);
 		}).catch((error) => {
 			console.log(error);
 		});
 
-		this.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"];
-		this.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"];
-
+		$scope.currentObj = {
+			noble: 'Periodic table gas',
+			ousts: 'Removes from power',
+			others: 'Not yourself',
+			secular: 'Not religious',
+			bubbles: 'Oxygen in water',
+			knowledge: 'School gains'
+		};
+		$scope.hardcodeLetters = ['LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS'];
+		$scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
+		$scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
+		// console.log('scope cW --> ', $scope.currentWords);
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
@@ -65,7 +74,7 @@
 
 		//** Five letter word
 		function wordCountFive(fiveLetterWord) {
-			console.log('wordcount 5 Arg ', fiveLetterWord);
+			// console.log('wordcount 5 Arg ', fiveLetterWord);
 			if (randomTruth()) {
 				mixedParts.push(fiveLetterWord.slice(0, 3));
 				mixedParts.push(fiveLetterWord.slice(3, 5));
@@ -77,7 +86,7 @@
 
 		//** Six letter word
 		function wordCountSix(sixLetterWord) {
-			console.log('wordcount 6 Arg ', sixLetterWord);
+			// console.log('wordcount 6 Arg ', sixLetterWord);
 			mixedParts.push(sixLetterWord.slice(0, 2));
 			mixedParts.push(sixLetterWord.slice(2, 4));
 			mixedParts.push(sixLetterWord.slice(4, 6));
@@ -85,7 +94,7 @@
 
 		//** Seven letter word
 		function wordCountSeven(sevenLetterWord) {
-			console.log('wordcount 7 Arg ', sevenLetterWord);
+			// console.log('wordcount 7 Arg ', sevenLetterWord);
 			if (randomTruth()) {
 				mixedParts.push(sevenLetterWord.slice(0, 2));
 				mixedParts.push(sevenLetterWord.slice(2, 5));
@@ -99,7 +108,7 @@
 
 		//** Eight letter word
 		function wordCountEight(eightLetterWord) {
-			console.log('wordcount 8 Arg ', eightLetterWord);
+			// console.log('wordcount 8 Arg ', eightLetterWord);
 			if (randomTruth()) {
 				mixedParts.push(eightLetterWord.slice(0, 3));
 				mixedParts.push(eightLetterWord.slice(3, 5));
@@ -113,14 +122,14 @@
 
 		//** Nine letter word
 		function wordCountNine(nineLetterWord) {
-			console.log('wordcount 9 Arg ', nineLetterWord);
+			// console.log('wordcount 9 Arg ', nineLetterWord);
 			mixedParts.push(nineLetterWord.slice(0, 3));
 			mixedParts.push(nineLetterWord.slice(3, 6));
 			mixedParts.push(nineLetterWord.slice(6, 9));
 		}
-		wordTheDestructor(wordClue);
-		console.log('mixedparts ', mixedParts);
-		console.log('mixedClues ', mixedClues);
+		// wordTheDestructor(wordClue);
+		// console.log('mixedparts ', mixedParts);
+		// console.log('mixedClues ', mixedClues);
 
 	}); // END OF CONTROLLER
 

@@ -1,0 +1,22 @@
+.start-section {
+
+    ol li {
+      text-align: left;
+      margin: 10px 50px 10px;
+      list-style-type: decimal;
+    }
+
+    .start-btn {
+        @include btn;
+        border: none;
+        display: block;
+        font: 700 1.4rem/1 $pop;
+        margin: 10px auto;
+        max-width: 200px;
+        padding: 20px;
+    }
+    .tile-wrapper {
+      width: 300px;
+      margin: 0 auto;
+    }
+}
