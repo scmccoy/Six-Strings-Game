@@ -15,19 +15,18 @@
                 <h1 class="">six$trings</h1>
                 <nav>
                     <ul>
-                        <li>restart round</li>
-                        <li><a href='#'>logout user</a></li>
-                        <li><a href='#!/game'>new game</a></li>
+                        <li><a ui-sref='gameParent.loginCtrl'>logout user</a></li>
+                        <li><a ui-sref='gameParent.startCtrl'>how to play</a></li>
                     </ul>
                 </nav>
             </header>
             <main>
                 <ui-view>
                 <section class = 'welcome-screen'>
-                <h1>six$trings</h1>
+                <h2>six$trings</h2>
                 <h3>a word game</h3>
-                <button><a href='#!/login'>new account / existing account login</a></button>
-                <button><a href='#!/start'>how to play</a></button>
+                <button><a ui-sref='gameParent.loginCtrl'>new account / existing account login</a></button>
+                <button><a ui-sref='gameParent.startCtrl'>how to play</a></button>
               </section></ui-view>
             </main>
 

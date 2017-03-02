@@ -6,6 +6,7 @@
 @import 'partials/wins';
 @import 'partials/leaderboard';
 @import 'partials/game';
+@import 'partials/start';
 @import 'partials/modifiers';
 
 body {
@@ -13,6 +14,11 @@ body {
     font: 16px/1.6 $pop;
     text-align: center;
     width: 100%;
+}
+
+h2 {
+  color: $orange;
+  font: 2rem/1 $fast;
 }
 
 a {
@@ -37,32 +43,18 @@ main {
     box-shadow: 1px 1px 20px $brown;
     clear: both;
 }
-
 .welcome-screen {
-    h1 {
-        color: $orange;
-        font: 2rem/1 $fast;
-    }
-    ol li {
-      text-align: left;
-      margin: 10px 50px 10px;
-      list-style-type: decimal;
-    }
-
-    .start-btn {
+  button {
         @include btn;
         border: none;
         display: block;
         font: 700 1.4rem/1 $pop;
         margin: 10px auto;
-        max-width: 200px;
+        max-width: 400px;
         padding: 20px;
     }
-    .tile-wrapper {
-      width: 300px;
-      margin: 0 auto;
-    }
 }
+
 
 footer {
     color: $gold;
