@@ -19,7 +19,7 @@
 			bubbles: 'Oxygen in water',
 			knowledge: 'School gains'
 		};
-		$scope.hardcodeLetters = ['LETTER', 'LETTER', 'LETTER', 'LETTER', 'LETTER', 'LETTER'];
+		$scope.hardcodeLetters = ['LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS'];
 		$scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
 		$scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
 		// console.log('scope cW --> ', $scope.currentWords);
