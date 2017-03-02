@@ -22,7 +22,8 @@
     <section class="guess-section">
         <div class="guess-wrapper">
             <form id="guessForm" class="guess-form" name="guessForm">
-                <p class="user-guess" placeholder="guess"></p>
+                <p class="user-guess"></p>
+                <!-- append ^^^ here -->
                 <button class="clearguess-btn">X</button>
                 <button class="guess-btn">guess</button>
             </form>
@@ -31,7 +32,8 @@
 
     <section class="tile-section">
         <article class="tile-wrapper">
-            <span ng-repeat="currentWord in currentWords">{{currentWord}}</span>
+            <!-- ng-click and append to p tag 'user-guess' -->
+            <span ng-click="tilePick(currentWord)" ng-repeat="currentWord in currentWords">{{currentWord}}</span>
 
         </article>
     </section>

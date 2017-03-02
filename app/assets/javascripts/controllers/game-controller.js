@@ -4,12 +4,12 @@
 	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope) {
 		console.log('in GameController');
 
-		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
-			this.getPuzzle = response;
-			console.log(this.getPuzzle);
-		}).catch((error) => {
-			console.log(error);
-		});
+		// $q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
+		// 	this.getPuzzle = response;
+		// 	console.log(this.getPuzzle);
+		// }).catch((error) => {
+		// 	console.log(error);
+		// });
 
 		$scope.currentObj = {
 			noble: 'Periodic table gas',
@@ -23,6 +23,16 @@
 		$scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
 		$scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
 		// console.log('scope cW --> ', $scope.currentWords);
+		///////////////////////////////////////
+		//** FUNCTIONS FOR Tile Pick
+		///////////////////////////////////////
+
+		$scope.tilePick = function(myPick) {
+			console.log('myPick --> ', myPick);
+			$('.user-guess').append(myPick);
+		};
+
+
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
