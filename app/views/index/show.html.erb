@@ -16,13 +16,19 @@
                 <nav>
                     <ul>
                         <li>restart round</li>
-                        <li>logout user</li>
-                        <li>new game</li>
+                        <li><a href='#'>logout user</a></li>
+                        <li><a href='#!/game'>new game</a></li>
                     </ul>
                 </nav>
             </header>
             <main>
-                <ui-view></ui-view>
+                <ui-view>
+                <section class = 'welcome-screen'>
+                <h1>six$trings</h1>
+                <h3>a word game</h3>
+                <button><a href='#!/login'>new account / existing account login</a></button>
+                <button><a href='#!/start'>how to play</a></button>
+              </section></ui-view>
             </main>
 
         <footer>
