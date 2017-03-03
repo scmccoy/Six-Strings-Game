@@ -1,4 +1,5 @@
 <section class="newuser-wrapper">
+
   <form id="newuserForm" ng-submit="userSubmit('new')" class="new-user-form" name="newUserForm" novalidate>
     <h2>create my new account</h2>
     <input ng-model="inputInfo.username" type="text" placeholder="username" required>
@@ -13,6 +14,7 @@
     </select>
 
     <button type="submit" ng-submit="userSubmit('new')">new user</button>
+
   </form>
   {{inputInfo.username}}
 </section>
