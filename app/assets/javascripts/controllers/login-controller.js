@@ -18,9 +18,9 @@
 			console.log('user', user);
 			// $scope.userInput.push($scope.inputInfo);
 			if (user === 'new') {
-				url = 'http://localhost:3000/users/sign_in';
-			} else {
 				url = 'http://localhost:3000/users/';
+			} else {
+				url = 'http://localhost:3000/users/sign_in';
 			}
 
 			localStorageService.set( 'login', $scope.inputInfo );
