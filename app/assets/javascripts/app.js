@@ -16,6 +16,10 @@
 			url: 'login',
 			controller: 'LoginController as logCtrl',
 			templateUrl: 'login.html'
+		}).state('gameParent.newUserCtrl', {
+			url: 'newuser',
+			controller: 'LoginController as logCtrl',
+			templateUrl: 'newuser.html'
 		}).state('gameParent.startCtrl', {
 			url: 'start',
 			controller: 'StartController as startCtrl',
