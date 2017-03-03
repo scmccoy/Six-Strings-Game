@@ -14,7 +14,7 @@
 		$scope.userSubmit = function() {
 			// $scope.userInput.push($scope.inputInfo);
 			localStorageService.set( 'login', $scope.inputInfo );
-			$q.when(dataService.post('http://localhost:3000/users')).then((response) => {
+			$q.when(dataService.post('http://localhost:3000/users/sign_in')).then((response) => {
 				console.log('response: ', response);
 			}).catch((error) => {
 				console.log(error);

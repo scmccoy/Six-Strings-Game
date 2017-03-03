@@ -41,7 +41,6 @@
       font-weight:  700;
     }
 }
-
 .tile-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +55,9 @@
         margin: 7px;
         padding-top: 18px;
         width: 75px;
+        &.tile-correct {
+          visibility: hidden;
+        }
     }
 }
 
