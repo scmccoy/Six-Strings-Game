@@ -36,21 +36,27 @@
 			for (var property in $scope.currentObj) {
 				if ($scope.currentObj.hasOwnProperty(property)) {
 					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) {
+
 						console.log('CORRRECT');
 					} else {
 						console.log('INCORRECT');
 					}
-
-					// console.log('prop ', property);
-					// console.log('prop is a typeof --> ', typeof property);
-					// console.log('myGuess ', $scope.myGuess);
-					// console.log('myGuess is a typeof -> ', typeof $scope.myGuess);
-
 				}
 			}
-
 		};
 
+
+
+		$('.tile-wrapper').on('click', '.shaneRules', function() {
+			let wordLength = $('.user-guess').html().length;
+			console.log('wordLength', wordLength);
+			if (wordLength > 9) {
+				$scope.clearGuess();
+				$(this).addClass("tile-correct");
+				$(this).removeClass("is-hidden");
+			}
+			$(this).addClass("is-hidden");
+		});
 
 		$scope.tilePick = function(myPick) {
 			console.log('myPick --> ', myPick);
@@ -61,6 +67,9 @@
 			$('.user-guess').html('');
 		};
 
+		if ($('.user-guess'.length > 9)) {
+			console.log('why, hello there!');
+		}
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
