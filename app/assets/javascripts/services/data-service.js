@@ -17,9 +17,6 @@
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				}
-				// data: JSON.stringify({
-				//
-				// })
 			});
 		}
 

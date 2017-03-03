@@ -1,7 +1,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LoginController', function($scope, $state, localStorageService) {
+	ng.module('sixStringApp').controller('LoginController', function($scope, $state, $q, localStorageService) {
 
 		console.log('in LoginController');
 		$scope.userInput = [];
@@ -13,8 +13,12 @@
 
 		$scope.userSubmit = function() {
 			// $scope.userInput.push($scope.inputInfo);
-			console.log('inputInfo ', $scope.inputInfo);
 			localStorageService.set( 'login', $scope.inputInfo );
+			$q.when(dataService.post('http://localhost:3000/users')).then((response) => {
+				console.log('response: ', response);
+			}).catch((error) => {
+				console.log(error);
+			});
 
 			$state.go( 'gameParent.gameCtrl' );
 
