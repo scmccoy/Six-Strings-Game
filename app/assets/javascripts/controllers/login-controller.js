@@ -1,10 +1,10 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LoginController', function($scope, $state, $q, localStorageService) {
+	ng.module('sixStringApp').controller('LoginController', function($scope, $q, $state, dataService, localStorageService) {
 
 		console.log('in LoginController');
-		$scope.userInput = [];
+		// $scope.userInput = [];
 		$scope.inputInfo = {
 			username: '',
 			email: '',
@@ -20,10 +20,9 @@
 				console.log(error);
 			});
 
-			$state.go( 'gameParent.gameCtrl' );
+		$state.go( 'gameParent.gameCtrl' );
+};
 
-		};
-
-	}); //loginController
+}); //loginController
 
 })(angular);
