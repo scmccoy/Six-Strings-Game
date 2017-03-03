@@ -24,6 +24,7 @@
 			}
 
 			localStorageService.set( 'login', $scope.inputInfo );
+
 			$q.when(dataService.post(url)).then((response) => {
 				console.log('response: ', response);
 			}).catch((error) => {
