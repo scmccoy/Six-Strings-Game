@@ -12,8 +12,9 @@
             <!--  ng-repeat="(key, value) in currentObj" -->
             <tr class="word-row-words" ng-repeat="(key, value) in currentObj">
                 <td>{{$index + 1}}</td>
-                <td class="word-clues correct">{{value}}</td>
-                <td class="word-word correct">{{key}}</td>
+                <!-- angular counter for repeat ^^  -->
+                <td class="word-clues">{{value}}</td>
+                <td class="word-word">{{key}}</td>
             </tr>
 
         </table>

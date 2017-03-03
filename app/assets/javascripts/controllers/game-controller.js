@@ -30,36 +30,53 @@
 		///////////////////////////////////////
 		//** FUNCTIONS FOR Tile Pick
 		///////////////////////////////////////
+		// $scope.correctChoicesArr = []; //
 
-		$scope.checkGuess = function() {
+
+		$scope.checkGuess = function() { // CHECK GUESS FUNCTION
 			$scope.myGuess = $('.user-guess').text();
-			for (var property in $scope.currentObj) {
-				if ($scope.currentObj.hasOwnProperty(property)) {
-					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) {
 
+			for (let property in $scope.currentObj) { // loop through obj
+				if ($scope.currentObj.hasOwnProperty(property)) { //checkin if on obj key
+					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) { //did guess match a key?
+						// $scope.correctChoicesArr.push($scope.myGuess.toLowerCase()); // if add guess to array
+						// console.log('correctChoicesArr --> ', $scope.correctChoicesArr);
+						console.log('prop --> ', property);
+						$(`tr:contains(${property})`).addClass('correct'); // interpolation // add correct class
+						$scope.clearGuess();
+						$('.is-hidden').addClass('tile-correct');
+						$('.shaneRules').removeClass('is-hidden');
 						console.log('CORRRECT');
 					} else {
+						$('.shaneRules').removeClass('is-hidden');
+						$scope.clearGuess();
 						console.log('INCORRECT');
 					}
 				}
 			}
 		};
 
-
-
-		$('.tile-wrapper').on('click', '.shaneRules', function() {
-			let wordLength = $('.user-guess').html().length;
-			console.log('wordLength', wordLength);
-			if (wordLength > 9) {
-				$scope.clearGuess();
-				$(this).addClass("tile-correct");
-				$(this).removeClass("is-hidden");
+		$('.tile-wrapper').on('click', '.shaneRules', function() { // tile on click function
+			$scope.wordLength = $('.user-guess').html().length; // check length of guesses
+			if ($scope.wordLength > 9) {
+				$scope.clearGuess(); // clear form
+				$('.shaneRules').removeClass('is-hidden'); // remove is hidden class from all tiles
 			}
-			$(this).addClass("is-hidden");
+			$(this).addClass("is-hidden"); // hide this tile picked
+
+			// for (let index = 0; index < 16; index++) {
+			// 	if ($scope.myGuess === $scope.correctChoicesArr[index]) { // if my correct guess matches
+			// 		console.log('arr in clicker ', $scope.correctChoicesArr[index]);
+			// 		$(this).addClass('tile-correct'); // hide tile class - ONLY for correct guesses
+			// 		$scope.correctChoicesArr = []; // empty array
+			// 	} else {
+			// 		console.log('else for adding tile-correct');
+			// 	}
+			// }
 		});
 
 		$scope.tilePick = function(myPick) {
-			console.log('myPick --> ', myPick);
+			// console.log('myPick --> ', myPick);
 			$('.user-guess').append(myPick);
 		};
 
@@ -67,9 +84,9 @@
 			$('.user-guess').html('');
 		};
 
-		if ($('.user-guess'.length > 9)) {
-			console.log('why, hello there!');
-		}
+		// if ($('.user-guess'.length > 9)) {
+		// 	console.log('why, hello there!');
+		// }
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
