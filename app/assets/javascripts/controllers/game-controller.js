@@ -4,41 +4,75 @@
 	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope) {
 		console.log('in GameController');
 
-		// $q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
-		// 	this.getPuzzle = response;
-		// 	console.log(this.getPuzzle);
-		// }).catch((error) => {
-		// 	console.log(error);
-		// });
+		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
+			// this.getPuzzle = response.data;
+			$scope.currentObj = response.data;
+			// console.log('Get Response --| ', $scope.currentObj);
+			wordTheDestructor($scope.currentObj);
+		}).catch((error) => {
+			console.log(error);
+		});
 
-		$scope.currentObj = {
-			noble: 'Periodic table gas',
-			ousts: 'Removes from power',
-			others: 'Not yourself',
-			secular: 'Not religious',
-			bubbles: 'Oxygen in water',
-			knowledge: 'School gains'
-		};
-		$scope.hardcodeLetters = ['LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS', 'LETTERS'];
-		$scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
-		$scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
+		// $scope.currentObj = {
+		// 	noble: 'Periodic table gas',
+		// 	ousts: 'Removes from power',
+		// 	others: 'Not yourself',
+		// 	secular: 'Not religious',
+		// 	bubbles: 'Oxygen in water',
+		// 	knowledge: 'School gains'
+		// };
+		// console.log('currentObj ===>> ', $scope.currentObj);
+		$scope.hardcodeLetters = [' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS'];
+		// $scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
+		// $scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
+
 		// console.log('scope cW --> ', $scope.currentWords);
 		///////////////////////////////////////
 		//** FUNCTIONS FOR Tile Pick
 		///////////////////////////////////////
+
+		$scope.checkGuess = function() {
+			$scope.myGuess = $('.user-guess').text();
+			for (var property in $scope.currentObj) {
+				if ($scope.currentObj.hasOwnProperty(property)) {
+					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) {
+						console.log('CORRRECT');
+					} else {
+						console.log('INCORRECT');
+					}
+
+					// console.log('prop ', property);
+					// console.log('prop is a typeof --> ', typeof property);
+					// console.log('myGuess ', $scope.myGuess);
+					// console.log('myGuess is a typeof -> ', typeof $scope.myGuess);
+
+				}
+			}
+
+		};
+
 
 		$scope.tilePick = function(myPick) {
 			console.log('myPick --> ', myPick);
 			$('.user-guess').append(myPick);
 		};
 
+		$scope.clearGuess = function() {
+			$('.user-guess').html('');
+		};
 
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
+		// $scope.currentWords = [];
+		// $scope.currentClues = [];
 		let mixedParts = []; // to be this.currentWords
 		let mixedClues = []; // to be this.currentClues
-		let wordClue = this.getPuzzle; //**** UPDATE TO CORRECT KEY OBJ
+		//let wordClue = this.getPuzzle; //**** UPDATE TO CORRECT KEY OBJ
+		let wordClue = $scope.currentObj;
+		// console.log('wordClue --> ', wordClue);
+		$scope.currentWords = mixedParts;
+		$scope.currentClues = mixedClues;
 		// const wordClue = {
 		// 	"NOBLE": "Periodic table gas",
 		// 	"OUSTS": "Removes from power",
@@ -49,6 +83,7 @@
 		// };
 
 		function wordTheDestructor(wordClue) {
+			// console.log('debug keys ', wordClue);
 			Object.keys(wordClue).forEach(function(i) {
 				// if ((i % 2) == 1) {}
 				if (i.length === 5) {
@@ -137,7 +172,7 @@
 			mixedParts.push(nineLetterWord.slice(3, 6));
 			mixedParts.push(nineLetterWord.slice(6, 9));
 		}
-		// wordTheDestructor(wordClue);
+
 		// console.log('mixedparts ', mixedParts);
 		// console.log('mixedClues ', mixedClues);
 

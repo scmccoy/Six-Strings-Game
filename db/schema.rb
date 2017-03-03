@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20170302194716) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -47,8 +45,4 @@ ActiveRecord::Schema.define(version: 20170302194716) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-=======
->>>>>>> a91a004dec2879d39687c4e45aef510608803075
-=======
->>>>>>> refs/remotes/origin/master
 end
