@@ -6,21 +6,19 @@
 		// let key = null;
 		// let value = null;
 
-		function setItems(key, value) {
+		function set(key, value) {
 			localStorageService.set(key, value);
 		}
 
-		function getItems(value) {
-			localStorageService.get(key);
+		function get(value) {
+			localStorageService.get(key) || [];
 		}
 
 		return {
-			set: setItems,
-			get: getItems
+			set: set,
+			get: get
 		};
 
 	});
 
 })(angular);
-
-// access LocalStorageModule from here ^^  (is in app.js module array)

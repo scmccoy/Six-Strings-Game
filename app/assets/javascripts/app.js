@@ -2,7 +2,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp', ['ui.router', 'templates']);
+	ng.module('sixStringApp', ['ui.router', 'templates', 'LocalStorageModule']);
 
 	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
