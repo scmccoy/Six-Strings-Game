@@ -4,6 +4,9 @@ class ScoresController < ApplicationController
   # GET /scores
   def index
     @scores = Score.all.order('score ASC').limit(10)
+    @scores = @scores.map do |score|
+      { score: score.score, username: score.user.username }
+    end
 
     render json: @scores
   end
