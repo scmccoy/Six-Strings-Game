@@ -1,25 +1,39 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LoginController', function($scope, $state, localStorageService) {
+	ng.module('sixStringApp').controller('LoginController', function($scope, $q, $state, dataService, localStorageService) {
 
 		console.log('in LoginController');
-		$scope.userInput = [];
+		// $scope.userInput = [];
 		$scope.inputInfo = {
 			username: '',
 			email: '',
-			password: ''
+			password: '',
+			pickone: 'pick one'
 		};
 
-		$scope.userSubmit = function() {
+		$scope.userSubmit = function(user) {
+
+			let url = '';
+			console.log('user', user);
 			// $scope.userInput.push($scope.inputInfo);
-			console.log('inputInfo ', $scope.inputInfo);
+			if (user === 'new') {
+				url = 'http://localhost:3000/users/sign_in';
+			} else {
+				url = 'http://localhost:3000/users/';
+			}
+
 			localStorageService.set( 'login', $scope.inputInfo );
 
-			$state.go( 'gameParent.gameCtrl' );
+			$q.when(dataService.post(url)).then((response) => {
+				console.log('response: ', response);
+			}).catch((error) => {
+				console.log(error);
+			});
 
-		};
+		$state.go( 'gameParent.gameCtrl' );
+};
 
-	}); //loginController
+}); //loginController
 
 })(angular);

@@ -12,8 +12,8 @@
             <!--  ng-repeat="(key, value) in currentObj" -->
             <tr class="word-row-words" ng-repeat="(key, value) in currentObj">
                 <td>{{$index + 1}}</td>
-                <td class="word-clues correct">{{value}}</td>
-                <td class="word-word correct">{{key}}</td>
+                <td class="word-clues">{{value}}</td>
+                <td class="word-word">{{key}}</td>
             </tr>
 
         </table>
@@ -24,8 +24,8 @@
             <form id="guessForm" class="guess-form" name="guessForm">
                 <p class="user-guess"></p>
                 <!-- append ^^^ here -->
-                <button ng-click="clearGuess()" class="clearguess-btn">X</button>
-                <button ng-click="checkGuess()" class="guess-btn">guess</button>
+                <button class="clearguess-btn">X</button>
+                <button class="guess-btn">guess</button>
             </form>
         </div>
     </section>
@@ -33,8 +33,7 @@
     <section class="tile-section">
         <article class="tile-wrapper">
             <!-- ng-click and append to p tag 'user-guess' -->
-            <span class="shaneRules" ng-click="tilePick(currentWord)" ng-repeat="currentWord in currentWords">{{currentWord}}</span>
-
+            <span ng-click="tilePick(currentWord)" ng-repeat="currentWord in currentWords">{{currentWord}}</span>
 
         </article>
     </section>

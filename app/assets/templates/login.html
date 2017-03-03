@@ -1,11 +1,10 @@
 <!doctype html>
 
 <section class="login-wrapper">
-  <form id="loginForm" ng-submit="userSubmit()" class="login-form" name="loginForm" novalidate>
-    <h2>login to play</h2>
-    <input ng-model="inputInfo.username" type="text" placeholder="username" required>
+  <form id="loginForm" ng-submit="userSubmit('old')" class="login-form" name="loginForm" novalidate>
+    <h2>log me in</h2>
     <input ng-model="inputInfo.email" type="email" placeholder="email" required>
     <input ng-model="inputInfo.password" type="password" placeholder="password" required>
-    <button type="submit" ng-submit='userSubmit()'>login</button>
+    <button type="submit" ng-submit="userSubmit('old')">login</button>
   </form>
 </section>
