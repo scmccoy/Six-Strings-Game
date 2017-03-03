@@ -1,0 +1,41 @@
+.new-user-form {
+    margin: 5px auto;
+    min-height: 300px;
+
+    h2 {
+        color: $orange;
+        font: 2rem/1 $fast;
+        margin-top: 60px;
+    }
+
+    input {
+        background-color: $gold;
+        border: 2px solid $gold;
+        color: black;
+        display: block;
+        font: 700 1rem/1 $pop;
+        margin: 10px auto;
+        text-align: center;
+        width: 240px;
+    }
+
+    select {
+        background-color: $gold;
+        border: 2px solid $gold;
+        color: gray;
+        direction: rtl;
+        font: 700 1rem/1 $pop;
+        overflow: hidden;
+        text-align-last: center;
+    }
+
+    button {
+        @include btn;
+        border: none;
+        display: block;
+        font: 700 1.4rem/1 $pop;
+        margin: 10px auto;
+        max-width: 200px;
+        padding: 20px;
+    }
+}
