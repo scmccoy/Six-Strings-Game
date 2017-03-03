@@ -1,5 +1,4 @@
-
-.login-form {
+.new-user-form {
     margin: 5px auto;
     min-height: 300px;
 
@@ -18,6 +17,16 @@
         margin: 10px auto;
         text-align: center;
         width: 240px;
+    }
+
+    select {
+        background-color: $gold;
+        border: 2px solid $gold;
+        color: gray;
+        direction: rtl;
+        font: 700 1rem/1 $pop;
+        overflow: hidden;
+        text-align-last: center;
     }
 
     button {
