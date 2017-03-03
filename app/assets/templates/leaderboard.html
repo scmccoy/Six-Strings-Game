@@ -8,6 +8,11 @@
       <th class="leaderboard-heading">username</th>
       <th class="leaderboard-heading">time</th>
     </tr>
+    <tr ng-repeat='baboon in leadData'>
+      <td>{{$index + 1}}</td>
+      <td>{{baboon.Username}}</td>
+      <td>{{baboon.Time}}</td>
+    </tr>
   </table>
   <button <a ui-sref='gameParent.gameCtrl'>play again</a></button>
 </section>

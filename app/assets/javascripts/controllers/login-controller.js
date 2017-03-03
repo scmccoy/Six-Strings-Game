@@ -11,14 +11,10 @@
 			password: '',
 			pickone: 'pick one'
 		};
+		$scope.currUser = {};
 
 		$scope.userSubmit = function(user) {
-
-
 			let url = '';
-			console.log('user', user);
-			console.log($scope.inputInfo);
-			// $scope.userInput.push($scope.inputInfo);
 			if (user === 'new') {
 				url = 'http://localhost:3000/users/';
 			} else {
@@ -29,12 +25,15 @@
 
 			$q.when(dataService.post(url, $scope.inputInfo)).then((response) => {
 				console.log('response: ', response);
+				// $scope.currUser = response.data;
+				// localStorageService.set( 'login', $scope.currUser );
 			}).catch((error) => {
 				console.log(error);
 			});
 
 		$state.go( 'gameParent.gameCtrl' );
 };
+
 
 }); //loginController
 

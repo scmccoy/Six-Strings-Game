@@ -14,10 +14,10 @@
 			return $http({
 				method: 'POST',
 				url: url,
+				data: data,
 				headers: {
 					"content-type": "application/json;charset=utf-8"
-				},
-				data: data
+				}
 			});
 		}
 
