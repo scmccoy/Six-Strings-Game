@@ -27,9 +27,19 @@
 .word-row-words {
     line-height: 1.5;
 }
+.word-clues {
+  &.correct {
+    color: rgba($brown, .3);
+    font-weight: 100;
+  }
+}
 
 .word-word {
     text-transform: uppercase;
+    &.correct {
+      color: rgba($green, .4);
+      font-weight:  700;
+    }
 }
 
 .tile-wrapper {
