@@ -7,7 +7,7 @@
 	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/');
-		// $urlRouterProvider.when('/', '/' + 'login');
+
 		$stateProvider.state('gameParent', {
 			url: '/',
 			abstract: true,
@@ -34,7 +34,7 @@
 			templateUrl: 'leaderboard.html'
 		}).state('gameParent.winCtrl', {
 			url: 'win',
-			controller: 'WinController as winCtrl',
+			controller: 'LoginController as logCtrl',
 			templateUrl: 'win.html'
 		});
 	});
