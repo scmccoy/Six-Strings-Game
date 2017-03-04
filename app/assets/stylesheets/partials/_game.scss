@@ -1,6 +1,6 @@
 .word-setup-wrapper {
     h4 {
-        @include btn;
+        @include main-btn;
         background: $red;
         font-size: 1rem;
         height: 25px;
