@@ -4,7 +4,7 @@
 	ng.module( 'sixStringApp' ).controller( 'LeaderboardController', function( dataService, $q, $state, $scope, localStorageService ) {
 		console.log( 'in LeaderboardController' );
 
-		$q.when( dataService.get( './img/leaderboard.json' ) ).then( ( response ) => {
+		$q.when( dataService.get( 'scores' ) ).then( ( response ) => {
 				$scope.leadData = response.data;
 		} ).catch( ( error ) => {
 			console.log( error );

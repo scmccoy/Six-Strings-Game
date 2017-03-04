@@ -1,6 +1,7 @@
 <!doctype html>
 
 <section class="login-wrapper">
+  <button class='is-hidden'>{{userLogout()}}</button>
   <form id="loginForm" ng-submit="userSubmit('old')" class="login-form" name="loginForm" novalidate>
     <h2>log me in</h2>
     <input ng-model="inputInfo.email" type="email" placeholder="email" required>
