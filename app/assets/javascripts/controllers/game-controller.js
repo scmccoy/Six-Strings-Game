@@ -11,7 +11,7 @@
 			wordTheDestructor($scope.currentObj);
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
-			// startTimer(0); // set setInterval timer to 0
+			startTimer(0); // set setInterval timer to 0
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -125,25 +125,34 @@
 		};
 
 		$scope.winCheck = function() {
-			console.log('lenght of correct class --> ', $('.correct').length);
-			if ($('.correct').length === 0) { // UPDATE TO 5 !!
-				$scope.getLocalStorage = localStorageService.get('login');
-				console.log('local storage ', $scope.getLocalStorage);
-
-				console.log('You won game');
+			// console.log('lenght of correct class --> ', $('.correct').length);
+			if ($('.correct').length === 1) { // UPDATE TO 6 !!
+				clearInterval(startSI);
+				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
+				// console.log('local storage ', $scope.getLocalStorage);
+				$scope.bestScore = $scope.bestTimes.pop();
+				$scope.postWinObj = {
+					user_id: $scope.getLocalStorage.id,
+					score: $scope.bestScore
+				};
+				$scope.bestTimes = []; // reset best time array
+				$scope.postWin(); // run post for best score
+				// console.log('post obj --> ', $scope.postWinObj);
 			}
 		};
-		$scope.winCheck();
-		$scope.postWin = function() {
-			$q.when(dataService.post('http://localhost:3000/scores')).then((response) => {
 
+		$scope.postWin = function() { // post userid and score to api // switch to win template
+			$q.when(dataService.post('http://localhost:3000/scores', $scope.postWinObj)).then((response) => {
+				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
+
+				$scope.postWinResponse = response;
+				// console.log('post win response ', response);
 				// time & userid
-
+				$state.go('gameParent.win');
 			}).catch((error) => {
 				console.log(error);
 			});
 		};
-
 
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
