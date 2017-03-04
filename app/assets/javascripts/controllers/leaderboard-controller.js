@@ -4,11 +4,13 @@
 	ng.module( 'sixStringApp' ).controller( 'LeaderboardController', function( dataService, $q, $state, $scope, localStorageService ) {
 		console.log( 'in LeaderboardController' );
 
-		$q.when( dataService.get( 'scores' ) ).then( ( response ) => {
+			$q.when( dataService.get( 'scores' ) ).then( ( response ) => {
 				$scope.leadData = response.data;
-		} ).catch( ( error ) => {
-			console.log( error );
-		} );
+				console.log('responsedata', $scope.leadData);
+			} ).catch( ( error ) => {
+				console.log( error );
+			} );
+
 
 	} );
 

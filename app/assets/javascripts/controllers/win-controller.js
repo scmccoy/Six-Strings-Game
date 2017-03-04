@@ -10,6 +10,8 @@
 		$scope.storUser = localStorageService.get('login');
 		console.log('storeUser', $scope.storUser);
 
+		$scope.scorUser = localStorageService.get('score');
+
 	});
 
 })(angular);
