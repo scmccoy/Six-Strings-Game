@@ -4,7 +4,9 @@
     "jquery": "latest",
     "angular": "latest",
     "lodash": "latest",
+    "moment": "latest",
     "angular-local-storage": "latest",
-    "angular-ui-router": "latest"
+    "angular-ui-router": "latest",
+    "angular-animate": "latest"
   }
 }
