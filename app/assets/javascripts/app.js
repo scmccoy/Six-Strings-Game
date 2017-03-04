@@ -1,42 +1,46 @@
 // ['ui.router', 'templates']
-(function(ng) {
+( function( ng ) {
 	"use strict";
 
-	ng.module('sixStringApp', ['ui.router', 'templates', 'LocalStorageModule']);
+	ng.module( 'sixStringApp', [ 'ui.router', 'templates', 'LocalStorageModule' ] );
 
-	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
+	ng.module( 'sixStringApp' ).config( function( $stateProvider, $urlRouterProvider ) {
 
 		$urlRouterProvider.otherwise('/');
-		// $urlRouterProvider.when('/', '/' + 'login');
+		// $urlRouterProvider.when('/','home');
 		$stateProvider.state('gameParent', {
 			url: '/',
 			abstract: true,
 			template: '<ui-view></ui-view>'
-		}).state('gameParent.loginCtrl', {
+		}).state('gameParent.index', {
+			url: '',
+			controller: 'LoginController as logCtrl',
+			templateUrl: 'home.html'
+		}).state('gameParent.login', {
 			url: 'login',
 			controller: 'LoginController as logCtrl',
 			templateUrl: 'login.html'
-		}).state('gameParent.newUserCtrl', {
+		}).state('gameParent.newuser', {
 			url: 'newuser',
 			controller: 'LoginController as logCtrl',
 			templateUrl: 'newuser.html'
-		}).state('gameParent.startCtrl', {
+		}).state('gameParent.start', {
 			url: 'start',
 			controller: 'StartController as startCtrl',
 			templateUrl: 'start.html'
-		}).state('gameParent.gameCtrl', {
+		}).state('gameParent.game', {
 			url: 'game',
 			controller: 'GameController as gameCtrl',
 			templateUrl: 'game.html'
-		}).state('gameParent.ldbdCtrl', {
+		}).state('gameParent.leaderboard', {
 			url: 'leaderboard',
-			controller: 'LeaderboardController as ldbdCtrl',
+			controller: 'LeaderboardController as ldbd',
 			templateUrl: 'leaderboard.html'
-		}).state('gameParent.winCtrl', {
+		}).state('gameParent.win', {
 			url: 'win',
-			controller: 'WinController as winCtrl',
+			controller: 'StartController as startCtrl',
 			templateUrl: 'win.html'
-		});
-	});
+		} );
+	} );
 
-})(angular);
+} )( angular );

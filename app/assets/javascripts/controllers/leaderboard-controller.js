@@ -1,8 +1,15 @@
-(function(ng) {
+( function( ng ) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('LeaderboardController', function() {
-		console.log('in LeaderboardController');
-	});
+	ng.module( 'sixStringApp' ).controller( 'LeaderboardController', function( dataService, $q, $state, $scope, localStorageService ) {
+		console.log( 'in LeaderboardController' );
 
-})(angular);
+		$q.when( dataService.get( './img/leaderboard.json' ) ).then( ( response ) => {
+				$scope.leadData = response.data;
+		} ).catch( ( error ) => {
+			console.log( error );
+		} );
+
+	} );
+
+} )( angular );
