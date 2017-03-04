@@ -140,6 +140,7 @@
 				$scope.bestTimes = []; // reset best time array
 				$scope.postWin(); // run post for best score
 				// console.log('post obj --> ', $scope.postWinObj);
+				$scope.trackGameWins();
 			}
 		};
 
@@ -159,7 +160,9 @@
 		$scope.trackGameWins = function() {
 			let sessionWins = 0;
 			sessionWins++;
-			localStorageService.set('gameswon', sessionWins); // update games won to local storage
+			console.log('get from server win total --> ', $scope.trackWins);
+			console.log('session wins --> ', sessionWins);
+			localStorageService.set('gameswon', (sessionWins + $scope.trackWins)); // update games won to local storage
 		};
 
 		///////////////////////////////////////
