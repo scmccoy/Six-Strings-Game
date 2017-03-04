@@ -11,7 +11,7 @@
 			wordTheDestructor($scope.currentObj);
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
-			startTimer(0); // set setInterval timer to 0
+			// startTimer(0); // set setInterval timer to 0
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -24,18 +24,18 @@
 		let startSI = null; // setInterval
 		$scope.startTimestamp = null;
 		// time is set to 0
-		function startTimer(myStartTimestamp) {
-			$scope.startTimestamp = parseInt(myStartTimestamp);
-
-			startSI = setInterval(function() {
-				console.log('timer --> ', $scope.startTimestamp);
-				$scope.startTimestamp++;
-				//	bestTimes.push(startTimestamp); // push
-				// console.log(bestTimes);
-				// console.log(startTimestamp);
-				$('.timer').html($scope.startTimestamp);
-			}, 1000);
-		}
+		// function startTimer(myStartTimestamp) {
+		// 	$scope.startTimestamp = parseInt(myStartTimestamp);
+		//
+		// 	startSI = setInterval(function() {
+		// 		console.log('timer --> ', $scope.startTimestamp);
+		// 		$scope.startTimestamp++;
+		// 		//	bestTimes.push(startTimestamp); // push
+		// 		// console.log(bestTimes);
+		// 		// console.log(startTimestamp);
+		// 		$('.timer').html($scope.startTimestamp);
+		// 	}, 1000);
+		// }
 		// for timer
 		function pad(num) {
 			return ("0" + num).slice(-2);
