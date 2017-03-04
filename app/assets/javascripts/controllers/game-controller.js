@@ -4,7 +4,7 @@
 	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope, localStorageService) {
 		console.log('in GameController');
 
-		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
+		$q.when(dataService.get('puzzles/random')).then((response) => {
 			// this.getPuzzle = response.data;
 			$scope.currentObj = response.data;
 			// console.log('Get Response --| ', $scope.currentObj);
@@ -70,6 +70,7 @@
 						// console.log('prop to LC --> ', property.toLowerCase());
 						// console.log('myGuess to LC --> ', $scope.myGuess.toLowerCase());
 						$(`tr:contains(${property})`).addClass('correct'); // interpolation // add correct class
+						$(`tr:contains(${property})`)[0].childNodes[7].innerText = property; // Adam's mess
 						// can contain word here?
 						$('.is-hidden').addClass('tile-correct'); // add hide class to Correct Guess Tiles
 						$('.tile-correct').removeClass('is-hidden'); // remove temp is hidden tile class from all tiles
@@ -126,7 +127,7 @@
 
 		$scope.winCheck = function() {
 			// console.log('lenght of correct class --> ', $('.correct').length);
-			if ($('.correct').length === 1) { // UPDATE TO 6 !!
+			if ($('.correct').length === 6) { // UPDATE TO 6 !!
 				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
 				// console.log('local storage ', $scope.getLocalStorage);
 				$scope.bestScore = $scope.bestTimes.pop();
@@ -141,7 +142,7 @@
 		};
 		//$scope.winCheck();
 		$scope.postWin = function() {
-			$q.when(dataService.post('http://localhost:3000/scores', $scope.postWinObj)).then((response) => {
+			$q.when(dataService.post('scores', $scope.postWinObj)).then((response) => {
 				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
 
 				$scope.postWinResponse = response;
