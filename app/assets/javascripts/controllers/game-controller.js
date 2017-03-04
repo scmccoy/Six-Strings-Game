@@ -13,6 +13,7 @@
 			clearInterval(startSI); // clear the setInterval
 			startTimer(0); // set setInterval timer to 0
 			$scope.trackWins = localStorageService.get('gameswon');
+			console.log('initial get gameswon --> ', $scope.trackWins);
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -128,7 +129,7 @@
 
 		$scope.winCheck = function() {
 			// console.log('lenght of correct class --> ', $('.correct').length);
-			if ($('.correct').length === 6) { // UPDATE TO 6 !!
+			if ($('.correct').length === 2) { // UPDATE TO 6 !!
 				clearInterval(startSI);
 				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
 				// console.log('local storage ', $scope.getLocalStorage);
@@ -140,7 +141,7 @@
 				$scope.bestTimes = []; // reset best time array
 				$scope.postWin(); // run post for best score
 				// console.log('post obj --> ', $scope.postWinObj);
-				$scope.trackGameWins();
+				$scope.trackGameWins(); // gets the total number of wins (server + this game) + sets to local storage
 			}
 		};
 
@@ -158,11 +159,13 @@
 		};
 
 		$scope.trackGameWins = function() {
-			let sessionWins = 0;
-			sessionWins++;
+			let sessionWin = 0;
+			sessionWin++;
+			let totalWins = sessionWin + $scope.trackWins;
 			console.log('get from server win total --> ', $scope.trackWins);
-			console.log('session wins --> ', sessionWins);
-			localStorageService.set('gameswon', (sessionWins + $scope.trackWins)); // update games won to local storage
+			console.log('session wins --> ', sessionWin);
+			console.log('total wins ', totalWins);
+			localStorageService.set('gameswon', totalWins); // update games won to local storage
 		};
 
 		///////////////////////////////////////
