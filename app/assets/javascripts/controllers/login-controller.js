@@ -27,7 +27,7 @@
 				console.log(response);
 				$scope.currUser = response.data.data;
 				localStorageService.set( 'login', $scope.currUser );
-				localStorageService.set( 'gamesWon', $scope.currUser.games_won );
+				localStorageService.set( 'gameswon', $scope.currUser.games_won );
 				console.log('curr: ', $scope.currUser);
 			}).catch((error) => {
 				console.log(error);
@@ -39,7 +39,7 @@
 $scope.userLogout = function() {
 	$scope.currUser = {};
 	localStorageService.set( 'login', $scope.currUser );
-	localStorageService.set( 'score', $scope.currUser );
+	localStorageService.set( 'gameswon', $scope.currUser );
 };
 
 
