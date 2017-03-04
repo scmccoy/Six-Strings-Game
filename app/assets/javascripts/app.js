@@ -6,35 +6,39 @@
 
 	ng.module( 'sixStringApp' ).config( function( $stateProvider, $urlRouterProvider ) {
 
-		$urlRouterProvider.otherwise( '/' );
-
-		$stateProvider.state( 'gameParent', {
+		$urlRouterProvider.otherwise('/');
+		// $urlRouterProvider.when('/','home');
+		$stateProvider.state('gameParent', {
 			url: '/',
 			abstract: true,
 			template: '<ui-view></ui-view>'
-		} ).state( 'gameParent.login', {
+		}).state('gameParent.index', {
+			url: '',
+			controller: 'LoginController as logCtrl',
+			templateUrl: 'home.html'
+		}).state('gameParent.login', {
 			url: 'login',
 			controller: 'LoginController as logCtrl',
 			templateUrl: 'login.html'
-		} ).state( 'gameParent.newuser', {
+		}).state('gameParent.newuser', {
 			url: 'newuser',
 			controller: 'LoginController as logCtrl',
 			templateUrl: 'newuser.html'
-		} ).state( 'gameParent.start', {
+		}).state('gameParent.start', {
 			url: 'start',
 			controller: 'StartController as startCtrl',
 			templateUrl: 'start.html'
-		} ).state( 'gameParent.game', {
+		}).state('gameParent.game', {
 			url: 'game',
 			controller: 'GameController as gameCtrl',
 			templateUrl: 'game.html'
-		} ).state( 'gameParent.leaderboard', {
+		}).state('gameParent.leaderboard', {
 			url: 'leaderboard',
-			controller: 'LeaderboardController as ldbdCtrl',
+			controller: 'LeaderboardController as ldbd',
 			templateUrl: 'leaderboard.html'
-		} ).state( 'gameParent.win', {
+		}).state('gameParent.win', {
 			url: 'win',
-			controller: 'WinController as winCtrl',
+			controller: 'StartController as startCtrl',
 			templateUrl: 'win.html'
 		} );
 	} );
