@@ -38,7 +38,7 @@
 			templateUrl: 'leaderboard.html'
 		}).state('gameParent.win', {
 			url: 'win',
-			controller: 'StartController as startCtrl',
+			controller: 'WinController as winCtrl',
 			templateUrl: 'win.html'
 		} );
 	} );

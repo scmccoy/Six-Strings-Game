@@ -11,7 +11,7 @@
 			wordTheDestructor($scope.currentObj);
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
-			startTimer(0); // set setInterval timer to 0
+			// startTimer(0); // set setInterval timer to 0
 		}).catch((error) => {
 			console.log(error);
 		});

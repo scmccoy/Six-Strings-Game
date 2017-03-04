@@ -5,6 +5,7 @@
 		console.log('in WinController');
 
 		$scope.storUser =	localStorageService.get( 'login' );
+		console.log('storeUser', $scope.storUser);
 
 	});
 

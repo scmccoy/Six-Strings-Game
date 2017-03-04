@@ -1,7 +1,7 @@
 asset 'jquery'
 asset 'angular'
 asset 'lodash'
+asset 'moment'
 asset 'angular-local-storage'
 asset 'angular-ui-router'
-asset 'moment'
 asset 'angular-animate'
