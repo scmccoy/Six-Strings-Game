@@ -1,7 +1,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope) {
+	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope, localStorageService) {
 		console.log('in GameController');
 
 		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
@@ -9,51 +9,95 @@
 			$scope.currentObj = response.data;
 			// console.log('Get Response --| ', $scope.currentObj);
 			wordTheDestructor($scope.currentObj);
+			$scope.randomArray();
+			clearInterval(startSI); // clear the setInterval
+			startTimer(0); // set setInterval timer to 0
 		}).catch((error) => {
 			console.log(error);
 		});
+		///////////////////////////////////////
+		//** FUNCTION DATE
+		///////////////////////////////////////
 
-		// $scope.currentObj = {
-		// 	noble: 'Periodic table gas',
-		// 	ousts: 'Removes from power',
-		// 	others: 'Not yourself',
-		// 	secular: 'Not religious',
-		// 	bubbles: 'Oxygen in water',
-		// 	knowledge: 'School gains'
+
+		let startSI = null; // setInterval
+		$scope.startTimestamp = null;
+		// time is set to 0
+		function startTimer(myStartTimestamp) {
+			$scope.startTimestamp = parseInt(myStartTimestamp);
+
+			startSI = setInterval(function() {
+				$scope.startTimestamp++;
+				$scope.bestTimes = []; // array for times
+				$scope.bestTimes.push($scope.startTimestamp);
+				// console.log('best times arr --> ', $scope.bestTimes);
+				// console.log('startTime stamp ', $scope.startTimestamp);
+				$('.timer').html(moment.unix($scope.startTimestamp).format('mm:ss'));
+			}, 1000);
+		}
+
+		// for timer
+		function pad(num) {
+			return ("0" + num).slice(-2);
+		}
+		// for timer
+		function hhmmss(secs) {
+			let minutes = Math.floor(secs / 60);
+			secs = secs % 60;
+			let hours = Math.floor(minutes / 60);
+			minutes = minutes % 60;
+			// console.log('min conv ', pad(minutes));
+			return pad(minutes) + ":" + pad(secs);
+		}
+		// $scope.finalTime = function() { // best game score (in SECONDS only)
+		// 	//let bestScore = $scope.bestTimes.pop();
+		// 	console.log('best score yo ', $scope.bestTimes.length);
 		// };
-		// console.log('currentObj ===>> ', $scope.currentObj);
-		$scope.hardcodeLetters = [' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS', ' LETTERS'];
-		// $scope.currentWords = ["NOB", "LE", "OUS", "TS", "OT", "HE", "RS", "SE", "CUL", "AR", "BU", "BBL", "ES", "KNO", "WLE", "DGE"]; // placeholder content
-		// $scope.currentClues = ["Periodic table gas", "Removes from power", "Not yourself", "Not religious", "Oxygen in water", "School gains"]; // placeholder content
+		// $scope.finalTime();
 
-		// console.log('scope cW --> ', $scope.currentWords);
 		///////////////////////////////////////
 		//** FUNCTIONS FOR Tile Pick
 		///////////////////////////////////////
 		// $scope.correctChoicesArr = []; //
 
+		$scope.incorrectLength = []; // tracker array for incorrect guesses by FOR LOOP OBJ only!
 
 		$scope.checkGuess = function() { // CHECK GUESS FUNCTION
 			$scope.myGuess = $('.user-guess').text();
-
 			for (let property in $scope.currentObj) { // loop through obj
 				if ($scope.currentObj.hasOwnProperty(property)) { //checkin if on obj key
 					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) { //did guess match a key?
-						// $scope.correctChoicesArr.push($scope.myGuess.toLowerCase()); // if add guess to array
-						// console.log('correctChoicesArr --> ', $scope.correctChoicesArr);
-						console.log('prop --> ', property);
+						// console.log('prop to LC --> ', property.toLowerCase());
+						// console.log('myGuess to LC --> ', $scope.myGuess.toLowerCase());
 						$(`tr:contains(${property})`).addClass('correct'); // interpolation // add correct class
-						$scope.clearGuess();
-						$('.is-hidden').addClass('tile-correct');
-						$('.shaneRules').removeClass('is-hidden');
+						// can contain word here?
+						$('.is-hidden').addClass('tile-correct'); // add hide class to Correct Guess Tiles
+						$('.tile-correct').removeClass('is-hidden'); // remove temp is hidden tile class from all tiles
+						$scope.clearGuess(); // clear guesses
 						console.log('CORRRECT');
+						$scope.incorrectLength.length = 0; //reset array
+						// console.log('incorrectLength after clearing --> ', $scope.incorrectLength);
+						///////////////////////////////////
+						$scope.winCheck();
+
+
+						///////////////////////////////////
 					} else {
-						$('.shaneRules').removeClass('is-hidden');
-						$scope.clearGuess();
+						$scope.incorrectLength.push('Remove@6');
 						console.log('INCORRECT');
+					}
+					if ($scope.incorrectLength.length === 6) {
+						// console.log('you are in INCORRECT IF ELSE FOR 6 INCORRECTS');
+						// console.log('incorrectLength before class and clearing --> ', $scope.incorrectLength, $scope.incorrectLength.length);
+						$('.shaneRules').removeClass('is-hidden'); // remove temp hidden class from all tiles
+						$scope.incorrectLength.length = 0; //reset array
+						// console.log('incorrectLength after clearing --> ', $scope.incorrectLength);
+					} else {
+						$scope.clearGuess(); // clear guesses
 					}
 				}
 			}
+			$scope.incorrectLength.length = 0; //reset array
 		};
 
 		$('.tile-wrapper').on('click', '.shaneRules', function() { // tile on click function
@@ -61,18 +105,9 @@
 			if ($scope.wordLength > 9) {
 				$scope.clearGuess(); // clear form
 				$('.shaneRules').removeClass('is-hidden'); // remove is hidden class from all tiles
+			} else {
+				$(this).addClass("is-hidden"); // hide this tile picked
 			}
-			$(this).addClass("is-hidden"); // hide this tile picked
-
-			// for (let index = 0; index < 16; index++) {
-			// 	if ($scope.myGuess === $scope.correctChoicesArr[index]) { // if my correct guess matches
-			// 		console.log('arr in clicker ', $scope.correctChoicesArr[index]);
-			// 		$(this).addClass('tile-correct'); // hide tile class - ONLY for correct guesses
-			// 		$scope.correctChoicesArr = []; // empty array
-			// 	} else {
-			// 		console.log('else for adding tile-correct');
-			// 	}
-			// }
 		});
 
 		$scope.tilePick = function(myPick) {
@@ -80,33 +115,65 @@
 			$('.user-guess').append(myPick);
 		};
 
+		$scope.clearButton = function() {
+			$('.user-guess').html('');
+			$('.shaneRules').removeClass('is-hidden');
+		};
+
 		$scope.clearGuess = function() {
 			$('.user-guess').html('');
 		};
 
-		// if ($('.user-guess'.length > 9)) {
-		// 	console.log('why, hello there!');
-		// }
+		$scope.winCheck = function() {
+			// console.log('lenght of correct class --> ', $('.correct').length);
+			if ($('.correct').length === 1) { // UPDATE TO 6 !!
+				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
+				// console.log('local storage ', $scope.getLocalStorage);
+				$scope.bestScore = $scope.bestTimes.pop();
+				$scope.postWinObj = {
+					user_id: $scope.getLocalStorage.id,
+					score: $scope.bestScore
+				};
+				$scope.bestTimes = []; // reset best time array
+				$scope.postWin(); // run post for best score
+				console.log('post obj --> ', $scope.postWinObj);
+			}
+		};
+		//$scope.winCheck();
+		$scope.postWin = function() {
+			$q.when(dataService.post('http://localhost:3000/scores', $scope.postWinObj)).then((response) => {
+				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
+
+				$scope.postWinResponse = response;
+				console.log('post win response ', response);
+				// time & userid
+				$state.go('gameParent.win');
+			}).catch((error) => {
+				console.log(error);
+			});
+		};
+
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
-		// $scope.currentWords = [];
-		// $scope.currentClues = [];
+
 		let mixedParts = []; // to be this.currentWords
 		let mixedClues = []; // to be this.currentClues
 		//let wordClue = this.getPuzzle; //**** UPDATE TO CORRECT KEY OBJ
 		let wordClue = $scope.currentObj;
-		// console.log('wordClue --> ', wordClue);
 		$scope.currentWords = mixedParts;
 		$scope.currentClues = mixedClues;
-		// const wordClue = {
-		// 	"NOBLE": "Periodic table gas",
-		// 	"OUSTS": "Removes from power",
-		// 	"OTHERS": "Not yourself",
-		// 	"SECULAR": "Not religious",
-		// 	"BUBBLES": "Oxygen in water",
-		// 	"KNOWLEDGE": "School gains"
-		// };
+
+		$scope.randomArray = function() { // randomize the word sections for tiles
+			mixedParts.sort(function(a, b) {
+				// console.log(mixedParts);
+				return 0.5 - Math.random();
+			});
+		};
+
+		$scope.randomizeClues = function() {
+			return 0.5 - Math.random();
+		};
 
 		function wordTheDestructor(wordClue) {
 			// console.log('debug keys ', wordClue);
@@ -201,7 +268,5 @@
 
 		// console.log('mixedparts ', mixedParts);
 		// console.log('mixedClues ', mixedClues);
-
 	}); // END OF CONTROLLER
-
 })(angular); // END OF IIFE

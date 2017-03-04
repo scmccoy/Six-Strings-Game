@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <title>six$trings | a word game</title>
-        <link href="https://fonts.googleapis.com/css?family=Faster+One|Poppins:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Faster+One|Luckiest+Guy&effect=fire-animation|Poppins:300,400,700" rel="stylesheet">
     </head>
 
     <body>
@@ -15,20 +15,15 @@
                 <h1 class="">six$trings</h1>
                 <nav>
                     <ul>
-                        <li><a ui-sref='gameParent.loginCtrl'>logout user</a></li>
-                        <li><a ui-sref='gameParent.startCtrl'>how to play</a></li>
+
+                        <li><a ui-sref='gameParent.login'>logout user</a></li>
+                        <li><a ui-sref='gameParent.start'>how to play</a></li>
                     </ul>
                 </nav>
             </header>
             <main>
-                <ui-view>
-                <section class = 'welcome-screen'>
-                <h2>six$trings</h2>
-                <h3>a word game</h3>
-                <button><a ui-sref='gameParent.newUserCtrl'>create new user</a></button>
-                <button><a ui-sref='gameParent.loginCtrl'>login my account</a></button>
-                <button><a ui-sref='gameParent.startCtrl'>how to play</a></button>
-              </section></ui-view>
+                <ui-view></ui-view>
+
             </main>
 
         <footer>
