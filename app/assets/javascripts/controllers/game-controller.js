@@ -127,6 +127,7 @@
 		$scope.winCheck = function() {
 			// console.log('lenght of correct class --> ', $('.correct').length);
 			if ($('.correct').length === 1) { // UPDATE TO 6 !!
+				clearInterval(startSI);
 				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
 				// console.log('local storage ', $scope.getLocalStorage);
 				$scope.bestScore = $scope.bestTimes.pop();
@@ -136,16 +137,16 @@
 				};
 				$scope.bestTimes = []; // reset best time array
 				$scope.postWin(); // run post for best score
-				console.log('post obj --> ', $scope.postWinObj);
+				// console.log('post obj --> ', $scope.postWinObj);
 			}
 		};
-		//$scope.winCheck();
-		$scope.postWin = function() {
+
+		$scope.postWin = function() { // post userid and score to api // switch to win template
 			$q.when(dataService.post('http://localhost:3000/scores', $scope.postWinObj)).then((response) => {
 				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
 
 				$scope.postWinResponse = response;
-				console.log('post win response ', response);
+				// console.log('post win response ', response);
 				// time & userid
 				$state.go('gameParent.win');
 			}).catch((error) => {
