@@ -18,3 +18,5 @@
 //= require angular-animate/angular-animate
 //= require_tree ../templates
 //= require_tree .
+//= require moment/moment
+//= require angular-animate/angular-animate
