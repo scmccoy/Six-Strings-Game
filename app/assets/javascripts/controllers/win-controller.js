@@ -11,6 +11,8 @@
 		console.log('storeUser', $scope.storUser);
 
 		$scope.scorUser = localStorageService.get('score');
+		$scope.totalGamesWon = localStorageService.get('gameswon');
+		console.log('total games won in win ctrl --> ', $scope.totalGamesWon);
 
 	});
 

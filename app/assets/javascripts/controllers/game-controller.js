@@ -12,7 +12,6 @@
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
 			startTimer(0); // set setInterval timer to 0
-			$scope.trackWins = localStorageService.get('gameswon');
 			console.log('initial get gameswon --> ', $scope.trackWins);
 		}).catch((error) => {
 			console.log(error);
@@ -139,16 +138,16 @@
 					score: $scope.bestScore
 				};
 				$scope.bestTimes = []; // reset best time array
+				$scope.trackGameWins(); // gets the total number of wins (server + this game) + sets to local storage
+
 				$scope.postWin(); // run post for best score
 				// console.log('post obj --> ', $scope.postWinObj);
-				$scope.trackGameWins(); // gets the total number of wins (server + this game) + sets to local storage
 			}
 		};
 
 		$scope.postWin = function() { // post userid and score to api // switch to win template
 			$q.when(dataService.post('scores', $scope.postWinObj)).then((response) => {
 				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
-
 				$scope.postWinResponse = response;
 				// console.log('post win response ', response);
 				// time & userid
@@ -159,11 +158,9 @@
 		};
 
 		$scope.trackGameWins = function() {
-			let sessionWin = 0;
-			sessionWin++;
-			let totalWins = sessionWin + $scope.trackWins;
+			$scope.trackWins = localStorageService.get('gameswon');
+			let totalWins = 1 + $scope.trackWins;
 			console.log('get from server win total --> ', $scope.trackWins);
-			console.log('session wins --> ', sessionWin);
 			console.log('total wins ', totalWins);
 			localStorageService.set('gameswon', totalWins); // update games won to local storage
 		};
