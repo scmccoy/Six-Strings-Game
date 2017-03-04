@@ -3,7 +3,7 @@
 
 
     <article class="word-setup-wrapper">
-        <h4 class="timer">00:00</h4>
+        <h4 class="timer"></h4>
         <table class="word-table">
             <tr class="word-row-headings">
                 <th class="word-heading">#</th>
@@ -15,7 +15,8 @@
                 <td>{{$index + 1}}</td>
                 <!-- angular counter for repeat ^^  -->
                 <td class="word-clues">{{value}}</td>
-                <td class="word-word">{{key}}</td>
+                <td class="word-word">{{key.length}} Letters</td>
+                <td class="word-word-length no-display">{{key}}</td>
             </tr>
 
         </table>
@@ -26,7 +27,7 @@
             <form id="guessForm" class="guess-form" name="guessForm">
                 <p class="user-guess"></p>
                 <!-- append ^^^ here -->
-                <button ng-click="clearGuess()" class="clearguess-btn">X</button>
+                <button ng-click="clearButton()" class="clearguess-btn">X</button>
                 <button ng-click="checkGuess()" class="guess-btn">guess</button>
             </form>
         </div>
