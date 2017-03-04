@@ -1,11 +1,11 @@
 <!doctype html>
 
-<section class="win-section">
+<section class='win-section'>
   <h2>congrats</h2>
-  <h2>{{currUser.username}}</h2>
-  <h3>your prize:</h3>
-  <img src=`./img/{{currUser.pickOne}}.png` alt="cookie" />
-  <p>your best time: {{currUser.bestTime}}</p>
-  <p>you have won {{currUser.numGames}} games</p>
-  <button>leaderboard</button>
+  <h2>{{storUser.username}}</h2>
+  <h3>here's your prize</h3>
+  <img ng-src=./img/{{storUser.pickone}}.png />
+  <p>your best time: {{storUser.best_time}}</p>
+  <p>you have won {{storUser.id}} games</p>
+  <button><a ui-sref='gameParent.leaderboard'>leaderboard</a></button>
 </section>
