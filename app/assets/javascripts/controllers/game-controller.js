@@ -1,7 +1,7 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope) {
+	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope, localStorageService) {
 		console.log('in GameController');
 
 		$q.when(dataService.get('http://localhost:3000/puzzles/random')).then((response) => {
@@ -20,7 +20,6 @@
 		///////////////////////////////////////
 
 
-		let bestTimes = []; // array for times
 		let startSI = null; // setInterval
 		$scope.startTimestamp = null;
 		// time is set to 0
@@ -28,14 +27,15 @@
 			$scope.startTimestamp = parseInt(myStartTimestamp);
 
 			startSI = setInterval(function() {
-				console.log('timer --> ', $scope.startTimestamp);
 				$scope.startTimestamp++;
-				//	bestTimes.push(startTimestamp); // push
-				// console.log(bestTimes);
-				// console.log(startTimestamp);
-				$('.timer').html($scope.startTimestamp);
+				$scope.bestTimes = []; // array for times
+				$scope.bestTimes.push($scope.startTimestamp);
+				// console.log('best times arr --> ', $scope.bestTimes);
+				// console.log('startTime stamp ', $scope.startTimestamp);
+				$('.timer').html(moment.unix($scope.startTimestamp).format('mm:ss'));
 			}, 1000);
 		}
+
 		// for timer
 		function pad(num) {
 			return ("0" + num).slice(-2);
@@ -49,7 +49,11 @@
 			// console.log('min conv ', pad(minutes));
 			return pad(minutes) + ":" + pad(secs);
 		}
-
+		// $scope.finalTime = function() { // best game score (in SECONDS only)
+		// 	//let bestScore = $scope.bestTimes.pop();
+		// 	console.log('best score yo ', $scope.bestTimes.length);
+		// };
+		// $scope.finalTime();
 
 		///////////////////////////////////////
 		//** FUNCTIONS FOR Tile Pick
@@ -74,6 +78,7 @@
 						$scope.incorrectLength.length = 0; //reset array
 						// console.log('incorrectLength after clearing --> ', $scope.incorrectLength);
 						///////////////////////////////////
+						$scope.winCheck();
 
 
 						///////////////////////////////////
@@ -119,6 +124,27 @@
 			$('.user-guess').html('');
 		};
 
+		$scope.winCheck = function() {
+			console.log('lenght of correct class --> ', $('.correct').length);
+			if ($('.correct').length === 0) { // UPDATE TO 5 !!
+				$scope.getLocalStorage = localStorageService.get('login');
+				console.log('local storage ', $scope.getLocalStorage);
+
+				console.log('You won game');
+			}
+		};
+		$scope.winCheck();
+		$scope.postWin = function() {
+			$q.when(dataService.post('http://localhost:3000/scores')).then((response) => {
+
+				// time & userid
+
+			}).catch((error) => {
+				console.log(error);
+			});
+		};
+
+
 		///////////////////////////////////////
 		//** FUNCTIONS FOR SEPERATING KEYS / VALUES
 		///////////////////////////////////////
@@ -135,6 +161,10 @@
 				// console.log(mixedParts);
 				return 0.5 - Math.random();
 			});
+		};
+
+		$scope.randomizeClues = function() {
+			return 0.5 - Math.random();
 		};
 
 		function wordTheDestructor(wordClue) {

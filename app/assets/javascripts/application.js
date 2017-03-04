@@ -16,3 +16,5 @@
 //= require angular-ui-router/release/angular-ui-router
 //= require_tree ../templates
 //= require_tree .
+//= require moment/moment
+//= require angular-animate/angular-animate

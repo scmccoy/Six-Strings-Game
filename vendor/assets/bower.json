@@ -5,6 +5,8 @@
     "angular": "latest",
     "lodash": "latest",
     "angular-local-storage": "latest",
-    "angular-ui-router": "latest"
+    "angular-ui-router": "latest",
+    "moment": "latest",
+    "angular-animate": "latest"
   }
 }
