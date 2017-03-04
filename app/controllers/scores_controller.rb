@@ -21,7 +21,11 @@ class ScoresController < ApplicationController
     @score = Score.new(score_params)
 
     if @score.save
-      @score.user.update(best_time: @score.score) if score_is_new_best?
+      @user = @score.user
+      @user.increment('games_won')
+      @user.update(best_time: @score.score) if score_is_new_best?
+      @user.save
+
       render json: @score, status: :created, location: @score
     else
       render json: @score.errors, status: :unprocessable_entity
