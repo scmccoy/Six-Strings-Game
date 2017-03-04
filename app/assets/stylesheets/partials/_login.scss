@@ -28,5 +28,13 @@
         margin: 10px auto;
         max-width: 200px;
         padding: 20px;
+        background-color: $orange;
+        color: $brown;
+    }
+    .new-acct-btn {
+      font: 400 1rem/1 $pop;
+      padding: 10px;
+      background-color: rgba($brown, .7);
+      color: $gold;
     }
 }
