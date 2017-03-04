@@ -157,7 +157,7 @@
 		$scope.trackGameWins = function() {
 			let sessionWins = 0;
 			sessionWins++;
-			localStorageService.set('login', games_won: sessionWins); // grab user ID for post
+			// localStorageService.set('login', games_won: sessionWins); // grab user ID for post
 		};
 
 		///////////////////////////////////////
