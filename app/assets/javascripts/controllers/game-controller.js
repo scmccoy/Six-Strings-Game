@@ -142,7 +142,7 @@
 		};
 
 		$scope.postWin = function() { // post userid and score to api // switch to win template
-			$q.when(dataService.post('http://localhost:3000/scores', $scope.postWinObj)).then((response) => {
+			$q.when(dataService.post('scores', $scope.postWinObj)).then((response) => {
 				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
 
 				$scope.postWinResponse = response;
@@ -152,6 +152,12 @@
 			}).catch((error) => {
 				console.log(error);
 			});
+		};
+
+		$scope.trackGameWins = function() {
+			let sessionWins = 0;
+			sessionWins++;
+			localStorageService.set('login', games_won: sessionWins); // grab user ID for post
 		};
 
 		///////////////////////////////////////
