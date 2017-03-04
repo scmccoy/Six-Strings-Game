@@ -12,6 +12,7 @@
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
 			startTimer(0); // set setInterval timer to 0
+			$scope.trackWins = localStorageService.get('gameswon');
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -158,7 +159,7 @@
 		$scope.trackGameWins = function() {
 			let sessionWins = 0;
 			sessionWins++;
-			// localStorageService.set('login', games_won: sessionWins); // grab user ID for post
+			localStorageService.set('gameswon', sessionWins); // update games won to local storage
 		};
 
 		///////////////////////////////////////
