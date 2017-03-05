@@ -7,4 +7,4 @@ BELLE:Likes books,TIANA:Aspiring chef,MERIDA:Ace archer,JASMINE:Looking for a ne
 VIRGO:The Maiden,LIBRA:The Scales,GEMINI:The Twins,SCORPIO:The Scorpion,AQUARIUS:The Water-Bearer,CAPRICORN:The Sea-Goat
 THERE:!("here"),INERT:!("moving"),LIQUID:!("solid" || "gas"),DOROTHY:!("in Kansas anymore"),CLINTON:!("president"),DARKNESS:!("light")
 HELLO:English greeting,ALOHA:Hawaiian greeting,OHAYOU:Japanese greeting,ANNYONG:Korean greeting,PRIVETIK:Russian greeting,VELKOMMEN:Danish greeting
-HOUSE:Place where people live,GRAVE:Place where zombies live,COFFIN:Place where vampires live,LIBRARY:Place where books live,INTERNET:Place where trolls live,EDITORIAL:Place where opinions live
+HOUSE:Place where people live,GRAVE:Place where zombies live,CASTLE:Place where kings live,LIBRARY:Place where books live,INTERNET:Place where trolls live,EDITORIAL:Place where opinions live
