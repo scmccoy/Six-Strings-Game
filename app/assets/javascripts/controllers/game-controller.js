@@ -128,7 +128,7 @@
 
 		$scope.winCheck = function() {
 			// console.log('lenght of correct class --> ', $('.correct').length);
-			if ($('.correct').length === 2) { // UPDATE TO 6 !!
+			if ($('.correct').length === 6) { // UPDATE TO 6 !!
 				clearInterval(startSI);
 				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
 				// console.log('local storage ', $scope.getLocalStorage);
