@@ -71,7 +71,7 @@
 						// console.log('prop to LC --> ', property.toLowerCase());
 						// console.log('myGuess to LC --> ', $scope.myGuess.toLowerCase());
 						$(`tr:contains(${property})`).addClass('correct'); // interpolation // add correct class
-						$(`tr:contains(${property})`)[0].childNodes[7].innerText = property; // Adam's mess
+						$(`tr:contains(${property})`).children('.word-word')[0].innerText = property; // Adam's thing
 						// can contain word here?
 						$('.is-hidden').addClass('tile-correct'); // add hide class to Correct Guess Tiles
 						$('.tile-correct').removeClass('is-hidden'); // remove temp is hidden tile class from all tiles
