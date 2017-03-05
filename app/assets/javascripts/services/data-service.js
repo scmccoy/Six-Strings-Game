@@ -1,8 +1,9 @@
 (function(ng) {
 	"use strict";
 
-	ng.module('sixStringApp').service('dataService', function($http) {
-		// function AllDataService($http) {
+	ng.module('sixStringApp').service('dataService',
+
+	function($http) {
 		function getData(url) {
 			return $http({
 				method: 'GET',
@@ -37,7 +38,6 @@
 				}
 			});
 		}
-
 
 		return {
 			get: getData,

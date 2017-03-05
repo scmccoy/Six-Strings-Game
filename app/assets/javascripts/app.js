@@ -7,7 +7,7 @@
 	ng.module( 'sixStringApp' ).config( function( $stateProvider, $urlRouterProvider ) {
 
 		$urlRouterProvider.otherwise('/');
-		// $urlRouterProvider.when('/','home');
+
 		$stateProvider.state('gameParent', {
 			url: '/',
 			abstract: true,
@@ -26,7 +26,7 @@
 			templateUrl: 'newuser.html'
 		}).state('gameParent.start', {
 			url: 'start',
-			controller: 'StartController as startCtrl',
+			controller: 'LoginController as logCtrl',
 			templateUrl: 'start.html'
 		}).state('gameParent.game', {
 			url: 'game',
