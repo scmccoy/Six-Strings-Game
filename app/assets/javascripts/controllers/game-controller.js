@@ -55,11 +55,12 @@
 		$scope.checkGuess = function() {
 			$scope.myGuess = $('.user-guess').text();
 			for (let property in $scope.currentObj) { // loop through obj
+
 				if ($scope.currentObj.hasOwnProperty(property)) {
 					if (property.toLowerCase() === $scope.myGuess.toLowerCase()) { // check answer vs guess
 
 						$(`tr:contains(${property})`).addClass('correct');
-						$(`tr:contains(${property})`)[0].childNodes[7].innerText = property; // Adam's mess
+						$(`tr:contains(${property})`).children('.word-word')[0].innerText = property; // Adam's thing
 						$('.is-hidden').addClass('tile-correct'); // add hide class to Correct Guess Tiles
 						$('.tile-correct').removeClass('is-hidden'); // remove temp is hidden tile class from all tiles
 
