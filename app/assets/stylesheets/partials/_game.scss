@@ -84,11 +84,11 @@
 }
 
 .guess-btn {
-    @include btn;
     background-color: $green;
     padding: 10px;
     border-radius: 0;
     border: 1px solid black;
+    color: $gold;
     text-transform: uppercase;
     font-size: 1rem;
     float: right;
