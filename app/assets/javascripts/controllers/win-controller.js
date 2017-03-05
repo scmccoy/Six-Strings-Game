@@ -5,8 +5,6 @@
 		console.log('in WinController');
 
 		$scope.storUser = localStorageService.get('login');
-		console.log('storeUser', $scope.storUser);
-
 		$scope.scorUser = localStorageService.get('score');
 		$scope.totalGamesWon = localStorageService.get('gameswon');
 

@@ -6,11 +6,9 @@
 
 			$q.when( dataService.get( 'scores' ) ).then( ( response ) => {
 				$scope.leadData = response.data;
-				console.log('responsedata', $scope.leadData);
 			} ).catch( ( error ) => {
 				console.log( error );
 			} );
-
 
 	} );
 

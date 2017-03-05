@@ -3,9 +3,6 @@
 
 	ng.module('sixStringApp').service('StorageService', function(localStorageService) {
 
-		// let key = null;
-		// let value = null;
-
 		function set(key, value) {
 			localStorageService.set(key, value);
 		}
