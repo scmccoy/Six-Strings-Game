@@ -1,6 +1,6 @@
 require 'csv'
 
-CSV.foreach('db/data/puzzles.seed') do |row|
+CSV.foreach('db/data/puzzles.seed', quote_char: "\x00") do |row|
   puzzle = Puzzle.create(
     word1: row[0],
     word2: row[1],
