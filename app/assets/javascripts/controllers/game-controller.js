@@ -12,7 +12,7 @@
 			$scope.randomArray();
 			clearInterval(startSI); // clear the setInterval
 			startTimer(0); // set setInterval timer to 0
-			console.log('initial get gameswon --> ', $scope.trackWins);
+
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -158,6 +158,7 @@
 		};
 
 		$scope.trackGameWins = function() {
+			console.log('initial get gameswon --> ', $scope.trackWins);
 			$scope.trackWins = localStorageService.get('gameswon');
 			let totalWins = 1 + $scope.trackWins;
 			console.log('get from server win total --> ', $scope.trackWins);
