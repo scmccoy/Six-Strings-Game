@@ -1,0 +1,692 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 49, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* line 52, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+button:focus, textarea:focus {
+  outline: none;
+}
+
+/* line 55, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_reset.scss */
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* line 2, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_header.scss */
+nav ul {
+  float: right;
+}
+/* line 6, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_header.scss */
+nav li {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  display: inline-block;
+  padding: 10px;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+nav li:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+
+/* line 14, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_header.scss */
+header h1 {
+  float: left;
+  font: 2.5rem/1 "Faster One", cursive;
+  text-align: left;
+}
+
+/* line 2, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_login.scss */
+.login-form {
+  margin: 5px auto;
+  min-height: 300px;
+}
+/* line 6, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_login.scss */
+.login-form h2 {
+  color: #f0874c;
+  font: 2rem/1 "Faster One", cursive;
+  margin-top: 60px;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_login.scss */
+.login-form input {
+  background-color: #ffe38e;
+  border: 2px solid #ffe38e;
+  color: black;
+  display: block;
+  font: 700 1rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  text-align: center;
+  width: 240px;
+}
+/* line 23, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_login.scss */
+.login-form button {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #f0874c;
+  color: #50310d;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.login-form button:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 34, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_login.scss */
+.login-form .new-acct-btn {
+  font: 400 1rem/1 "Poppins", sans-serif;
+  padding: 10px;
+  background-color: rgba(80, 49, 13, 0.7);
+  color: #ffe38e;
+}
+
+/* line 1, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_newuser.scss */
+.new-user-form {
+  margin: 5px auto;
+  min-height: 300px;
+}
+/* line 5, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_newuser.scss */
+.new-user-form h2 {
+  color: #f0874c;
+  font: 2rem/1 "Faster One", cursive;
+  margin-top: 60px;
+}
+/* line 11, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_newuser.scss */
+.new-user-form input {
+  background-color: #ffe38e;
+  border: 2px solid #ffe38e;
+  color: black;
+  display: block;
+  font: 700 1rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  text-align: center;
+  width: 240px;
+}
+/* line 22, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_newuser.scss */
+.new-user-form select {
+  background-color: #ffe38e;
+  border: 2px solid #ffe38e;
+  color: gray;
+  direction: rtl;
+  font: 700 1rem/1 "Poppins", sans-serif;
+  overflow: hidden;
+  text-align-last: center;
+}
+/* line 32, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_newuser.scss */
+.new-user-form button {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #f0874c;
+  color: #50310d;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.new-user-form button:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+
+/* line 1, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section {
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: -30px auto 20px;
+  min-height: 300px;
+}
+/* line 6, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section h2 {
+  margin-top: 60px;
+}
+/* line 10, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section h3 {
+  color: #f0874c;
+  font: 2rem/1 "Luckiest Guy", cursive;
+  margin-top: 20px;
+}
+/* line 16, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section img {
+  height: 250px;
+  width: 250px;
+}
+/* line 21, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section input {
+  background-color: #ffe38e;
+  border: 2px solid #ffe38e;
+  color: black;
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 240px;
+}
+/* line 31, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section button {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  max-width: 200px;
+  padding: 20px;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.win-section button:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 40, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_wins.scss */
+.win-section .play-again-btn {
+  background-color: rgba(240, 135, 76, 0.9);
+  color: #50310d;
+}
+
+/* line 1, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-section {
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto 60px;
+  min-height: 300px;
+}
+/* line 6, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-section h2 {
+  margin-top: 60px;
+}
+/* line 10, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-section table {
+  border-bottom: 2px solid #50310d;
+  margin: 0 auto;
+  width: 400px;
+}
+/* line 16, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-section button {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 20px auto;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #f0874c;
+  color: #50310d;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.leaderboard-section button:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 27, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-section img {
+  width: 400px;
+}
+
+/* line 32, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-heading {
+  border-bottom: 2px solid #50310d;
+  font: 700 1.5rem/1 "Poppins", sans-serif;
+  padding-top: 25px;
+}
+
+/* line 38, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_leaderboard.scss */
+.leaderboard-entry {
+  font: 400 1rem/1.5 "Poppins", sans-serif;
+}
+
+/* line 2, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-setup-wrapper h4 {
+  background: rgba(240, 135, 76, 0.9);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #50310d;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  background: #bf2929;
+  font-size: 1rem;
+  height: 25px;
+  margin: 10px auto;
+  width: 80px;
+}
+/* line 29, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.word-setup-wrapper h4:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 10, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-setup-wrapper h4:hover {
+  transform: none;
+  background: #bf2929;
+}
+/* line 16, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-setup-wrapper table {
+  margin: 0 auto;
+  width: 400px;
+}
+
+/* line 22, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-heading {
+  border-bottom: 2px solid #50310d;
+  font: 700 1.5rem/1 "Poppins", sans-serif;
+}
+
+/* line 27, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-row-words {
+  line-height: 1.5;
+}
+/* line 29, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-row-words.correct {
+  color: rgba(13, 181, 45, 0.4);
+  font-weight: 700;
+}
+
+/* line 35, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.word-word {
+  text-transform: uppercase;
+}
+
+/* line 38, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.tile-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto 25px;
+  width: 400px;
+}
+/* line 45, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.tile-wrapper span {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  font-size: 1.3rem;
+  height: 50px;
+  margin: 7px;
+  padding-top: 18px;
+  width: 75px;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.tile-wrapper span:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 52, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.tile-wrapper span.tile-correct {
+  visibility: hidden;
+}
+
+/* line 58, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.guess-form {
+  margin: 5px auto;
+}
+/* line 61, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.guess-form p {
+  background-color: #ffe38e;
+  border: 2px solid #ffe38e;
+  color: black;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+  height: 45px;
+  float: left;
+  margin-left: 50px;
+  padding-top: 12px;
+}
+
+/* line 77, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.clearguess-btn {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  background: #bf2929;
+  border-radius: 0;
+  font-size: 1.4rem;
+  padding: 5px;
+  float: left;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.clearguess-btn:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+
+/* line 86, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.guess-btn {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  background-color: #0db52d;
+  padding: 10px;
+  border-radius: 0;
+  border: 1px solid black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  float: right;
+  width: 120px;
+  margin-right: 65px;
+  max-width: inherit;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.guess-btn:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 98, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_game.scss */
+.guess-btn:hover {
+  background-color: #065615;
+}
+
+/* line 3, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_start.scss */
+.start-section h3 {
+  font: 700 1.5rem/1 "Poppins", sans-serif;
+  margin-bottom: 30px;
+}
+/* line 8, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_start.scss */
+.start-section ol li {
+  text-align: left;
+  margin: 10px 50px 10px;
+  list-style-type: decimal;
+  line-height: 1;
+}
+/* line 15, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_start.scss */
+.start-section .start-btn {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 30px auto;
+  max-width: 200px;
+  padding: 20px;
+  background-color: #f0874c;
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.start-section .start-btn:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 25, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_start.scss */
+.start-section .tile-wrapper {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* line 1, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_modifiers.scss */
+.is-hidden {
+  visibility: hidden;
+}
+
+/* line 5, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_modifiers.scss */
+.no-display {
+  display: none;
+}
+
+/* line 13, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+body {
+  background: #50310d url("/img/strings1.jpg") center center/cover no-repeat fixed;
+  font: 16px/1.6 "Poppins", sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+/* line 20, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+h2 {
+  color: #f0874c;
+  font: 2rem/1 "Faster One", cursive;
+}
+
+/* line 25, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+a {
+  text-decoration: none;
+  color: #ffe38e;
+}
+/* line 29, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+a:hover {
+  color: #fff8ee;
+}
+
+/* line 34, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.page-container {
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* line 40, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+main {
+  background: rgba(255, 248, 238, 0.9);
+  border: 5px solid #50310d;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px #50310d;
+  clear: both;
+}
+
+/* line 48, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen article {
+  position: relative;
+  text-align: center;
+}
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/* line 63, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen article h4 {
+  position: absolute;
+  top: 40%;
+  left: 5px;
+  color: #f0874c;
+  text-shadow: 5px 5px 10px black;
+  font: 4.6rem/1 "Faster One", cursive;
+  animation: zoom-in 10s ease alternate;
+}
+/* line 72, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen article p {
+  position: absolute;
+  top: 85%;
+  color: rgba(255, 248, 238, 0.6);
+  font: 1.5rem/1 "Poppins", sans-serif;
+  left: 70%;
+}
+/* line 79, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen article video {
+  width: 490px;
+  border-radius: 15px 15px 0 0;
+}
+/* line 84, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen button {
+  background: rgba(80, 49, 13, 0.7);
+  font-size: 0.85rem;
+  border-radius: 10px;
+  color: #ffe38e;
+  line-height: 1;
+  margin: 5px 0;
+  max-width: 70px;
+  padding: 5px 0;
+  transition: 0.2s ease;
+  border: none;
+  display: block;
+  color: #50310d;
+  font: 700 1.4rem/1 "Poppins", sans-serif;
+  margin: 10px auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(240, 135, 76, 0.85);
+}
+/* line 12, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/partials/_mixins.scss */
+.welcome-screen button:hover {
+  background: #50310d;
+  color: #fff8ee;
+  transform: scale(1.05);
+}
+/* line 96, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+.welcome-screen .start {
+  background-color: rgba(80, 49, 13, 0.6);
+}
+
+/* line 102, /Users/adamreed/IronYard/Week8/Six-Strings-Game/app/assets/stylesheets/app.scss */
+footer {
+  color: #ffe38e;
+  font: 700 1rem/1 "Poppins", sans-serif;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+

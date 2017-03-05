@@ -1,0 +1,19 @@
+<!doctype html>
+
+<section class="leaderboard-section">
+  <h2>leaderboard</h2>
+  <table>
+    <tr>
+      <img ng-src='img/leaders.gif' />
+      <th class="leaderboard-heading">#</th>
+      <th class="leaderboard-heading">username</th>
+      <th class="leaderboard-heading">time</th>
+    </tr>
+    <tr ng-repeat='baboon in leadData'>
+      <td>{{$index + 1}}</td>
+      <td>{{baboon.username}}</td>
+      <td>{{baboon.score}} sec</td>
+    </tr>
+  </table>
+  <button <a ui-sref='gameParent.game'>play again</a></button>
+</section>
