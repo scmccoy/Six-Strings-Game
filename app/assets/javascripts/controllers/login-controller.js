@@ -40,6 +40,7 @@ $scope.userLogout = function() {
 	$scope.currUser = {};
 	localStorageService.set( 'login', $scope.currUser );
 	localStorageService.set( 'gameswon', $scope.currUser );
+	localStorageService.set( 'score', $scope.currUser );
 };
 
 
