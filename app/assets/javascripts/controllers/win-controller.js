@@ -6,6 +6,7 @@
 
 		$scope.storUser = localStorageService.get('login');
 		$scope.scorUser = localStorageService.get('score');
+		$scope.totalGamesWon = localStorageService.get('gameswon');
 
 	});
 
