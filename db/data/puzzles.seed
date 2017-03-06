@@ -5,3 +5,10 @@ ENTEI:Legendary dog(?) pokemon,MAGBY:Baby pokemon,VULPIX:Browser pokemon,FLAREON
 MARIO:It's-a-me!,SONIC:You're too slow!,KLONOA:Wahoo!,CHOCOBO:Kweh!,SCORPION:Get over here!,BOMBERMAN:BOOM!
 BELLE:Likes books,TIANA:Aspiring chef,MERIDA:Ace archer,JASMINE:Looking for a new world,RAPUNZEL:Has a magical voice,SNOWWHITE:Friend of dwarves
 VIRGO:The Maiden,LIBRA:The Scales,GEMINI:The Twins,SCORPIO:The Scorpion,AQUARIUS:The Water-Bearer,CAPRICORN:The Sea-Goat
+THERE:!("here"),INERT:!("moving"),LIQUID:!("solid" || "gas"),DOROTHY:!("in Kansas anymore"),CLINTON:!("president"),DARKNESS:!("light")
+HELLO:English greeting,ALOHA:Hawaiian greeting,OHAYOU:Japanese greeting,ANNYONG:Korean greeting,PRIVETIK:Russian greeting,VELKOMMEN:Danish greeting
+SHEEP:Origin of wool,FENCE:Prevent loss of cattle,GRAPES:Makes wine,CHICKEN:Can run without head,HENHOUSE:where eggs are laid,LIVESTOCK:animals on the farm
+SPOCK:Famous vulcan,JAMES:Blank T Kirk,PHASER:Set to stun,BATLETH:Klingon weapon of choice,MINDMELD:union of minds,TRICORDER:the device that does everything
+FRODO:famous hobbit,DWARF:lives underground,SHELOB:Giant spider,TOLKIEN:famous author(Lord of the Rings),HOBBITON:home of the hobbits,OBEISANCE:wormwood to Saruman
+MAGIC:ask drew about angular,DOBBY:happily freed house-elf,MINISTRY: blank of Magic,SNITCH:150pts - ends the game,SEVERUS:the potions master,QUIDDITCH:game of brooms
+HOUSE:Place where people live,GRAVE:Place where zombies live,CASTLE:Place where kings live,LIBRARY:Place where books live,INTERNET:Place where trolls live,EDITORIAL:Place where opinions live
