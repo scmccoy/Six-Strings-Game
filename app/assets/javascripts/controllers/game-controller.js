@@ -8,6 +8,12 @@
 		///////////////////////////////////////
 		$q.when(dataService.get('puzzles/random')).then((response) => {
 			$scope.currentObj = response.data;
+			//////////////////////////////////
+			// Testing the randomization of the clues / keys in top section 
+			$scope.testing = $scope.shuffle($scope.currentObj);
+
+			console.log('testing shuffle obj --> ', $scope.testing);
+			//////////////////////////////////
 			wordTheDestructor($scope.currentObj); // api call--| populates tiles, clues & key
 			$scope.randomArray();
 			clearInterval(startSI);
@@ -82,6 +88,19 @@
 				}
 			}
 			$scope.incorrectLength.length = 0;
+		};
+
+		//////////////////////////////////////
+		// TESTING SHUFFLE OBJ
+		$scope.shuffle = function(sourceArray) {
+			for (let i = 0; i < sourceArray.length - 1; i++) {
+				let j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+				let temp = sourceArray[j];
+				sourceArray[j] = sourceArray[i];
+				sourceArray[i] = temp;
+			}
+			return sourceArray;
 		};
 
 		///////////////////////////////////////
