@@ -11,7 +11,7 @@ class PuzzlesController < ApplicationController
   # GET /puzzles/random
   def random
     @random = Puzzle.all.sample
-    @words = split_clues(@random)
+    @words = split_clues(@random).to_a.sample(6).to_h
 
     render json: @words
   end
