@@ -8,12 +8,6 @@
 		///////////////////////////////////////
 		$q.when(dataService.get('puzzles/random')).then((response) => {
 			$scope.currentObj = response.data;
-			//////////////////////////////////
-			// Testing the randomization of the clues / keys in top section 
-			$scope.testing = $scope.shuffle($scope.currentObj);
-
-			console.log('testing shuffle obj --> ', $scope.testing);
-			//////////////////////////////////
 			wordTheDestructor($scope.currentObj); // api call--| populates tiles, clues & key
 			$scope.randomArray();
 			clearInterval(startSI);
