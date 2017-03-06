@@ -4,13 +4,17 @@
 	ng.module('sixStringApp').controller('GameController', function(dataService, $q, $state, $scope, localStorageService) {
 		console.log('in GameController');
 		///////////////////////////////////////
+		//** Clear Intervals on load
+		for (var i = 1; i < 20; i++)
+			window.clearInterval(i);
+		///////////////////////////////////////
 		//** QUEUE--| Get Puzzle, Start Timer
 		///////////////////////////////////////
 		$q.when(dataService.get('puzzles/random')).then((response) => {
 			$scope.currentObj = response.data;
 			wordTheDestructor($scope.currentObj); // api call--| populates tiles, clues & key
+
 			$scope.randomArray();
-			clearInterval(startSI);
 			startTimer(0); // set setInterval timer to 0
 		}).catch((error) => {
 			console.log(error);
@@ -19,13 +23,12 @@
 		//** FUNCTIONS--| Timer
 		///////////////////////////////////////
 
-		let startSI = null;
-		$scope.startTimestamp = null;
+		$scope.startTimestamp = 0;
 
 		function startTimer(myStartTimestamp) {
 			$scope.startTimestamp = parseInt(myStartTimestamp);
 
-			startSI = setInterval(function() {
+			$scope.startSI = setInterval(function() {
 				$scope.startTimestamp++;
 				$scope.bestTimes = []; // array for times --| see WinCheck function
 				$scope.bestTimes.push($scope.startTimestamp);
@@ -45,6 +48,9 @@
 			// console.log('min conv ', pad(minutes));
 			return pad(minutes) + ":" + pad(secs);
 		}
+
+
+
 
 		///////////////////////////////////////
 		//** FUNCTION--| Check Guess
@@ -84,18 +90,7 @@
 			$scope.incorrectLength.length = 0;
 		};
 
-		//////////////////////////////////////
-		// TESTING SHUFFLE OBJ
-		$scope.shuffle = function(sourceArray) {
-			for (let i = 0; i < sourceArray.length - 1; i++) {
-				let j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
-				let temp = sourceArray[j];
-				sourceArray[j] = sourceArray[i];
-				sourceArray[i] = temp;
-			}
-			return sourceArray;
-		};
 
 		///////////////////////////////////////
 		//** ADD EVENT LISTENER--| Tile Pick
@@ -132,7 +127,7 @@
 		///////////////////////////////////////
 		$scope.winCheck = function() {
 			if ($('.correct').length === 6) {
-				clearInterval(startSI);
+				clearInterval($scope.startSI);
 				$scope.getLocalStorage = localStorageService.get('login'); // grab user ID for post
 				$scope.bestScore = $scope.bestTimes.pop();
 				$scope.postWinObj = { // obj to send in Post (postWin function)
@@ -151,6 +146,7 @@
 			$q.when(dataService.post('scores', $scope.postWinObj)).then((response) => {
 				localStorageService.set('score', $scope.postWinObj); // grab user ID for post
 				$scope.postWinResponse = response;
+
 				$state.go('gameParent.win');
 			}).catch((error) => {
 				console.log(error);
