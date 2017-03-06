@@ -15,38 +15,9 @@
         transform: scale(1.05);
     }
 }
-@mixin main-btn {
-    background: rgba($orange, .9);
-    font-size: 0.85rem;
-    border-radius: 10px;
-    color: $brown;
-    line-height: 1;
-    margin: 5px 0;
-    max-width: 70px;
-    padding: 5px 0;
-    transition: 0.2s ease;
+@mixin bp($point) {
 
-    &:hover {
-        background: $brown;
-        color: $white;
-        transform: scale(1.05);
-    }
-}
-
-@mixin second-btn {
-    background: rgba($brown, .7);
-    font-size: 0.85rem;
-    border-radius: 10px;
-    color: $gold;
-    line-height: 1;
-    margin: 5px 0;
-    max-width: 70px;
-    padding: 5px 0;
-    transition: 0.2s ease;
-
-    &:hover {
-        background: $brown;
-        color: $white;
-        transform: scale(1.05);
-    }
+  @if $point == mobile {
+    @media screen and (max-width: 525px) { @content; }
+  }
 }

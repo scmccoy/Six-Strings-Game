@@ -15,14 +15,14 @@
 
     button {
         @include btn;
+        background: rgba($orange, .9);
+        color: $brown;
         border: none;
         display: block;
         font: 700 1.4rem/1 $pop;
-        margin: 20px auto;
+        margin: 15px auto;
         max-width: 200px;
         padding: 20px;
-        background-color: $orange;
-        color: $brown;
     }
     img {
       width: 400px;

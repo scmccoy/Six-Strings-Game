@@ -1,6 +1,6 @@
 .word-setup-wrapper {
     h4 {
-        @include main-btn;
+        @include btn;
         background: $red;
         font-size: 1rem;
         height: 25px;
@@ -8,8 +8,8 @@
         width: 80px;
 
         &:hover {
-            transform: none;
             background: $red;
+            transform: none;
         }
     }
 
@@ -26,15 +26,17 @@
 
 .word-row-words {
     line-height: 1.5;
+
     &.correct {
-      color: rgba($green, .4);
-      font-weight:  700;
+        color: rgba($green, .4);
+        font-weight: 700;
     }
 }
 
 .word-word {
     text-transform: uppercase;
 }
+
 .tile-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -49,8 +51,9 @@
         margin: 7px;
         padding-top: 18px;
         width: 75px;
+
         &.tile-correct {
-          visibility: hidden;
+            visibility: hidden;
         }
     }
 }
@@ -62,15 +65,14 @@
         background-color: $gold;
         border: 2px solid $gold;
         color: black;
+        float: left;
         font: 700 1.4rem/1 $pop;
+        height: 45px;
+        margin-left: 50px;
+        padding-top: 12px;
         text-align: center;
         text-transform: uppercase;
         width: 200px;
-        height: 45px;
-        float:left;
-        margin-left: 50px;
-        padding-top: 12px;
-
     }
 }
 
@@ -78,24 +80,25 @@
     @include btn;
     background: $red;
     border-radius: 0;
+    float: left;
     font-size: 1.4rem;
     padding: 5px;
-    float: left;
 }
 
 .guess-btn {
     background-color: $green;
-    padding: 10px;
     border-radius: 0;
     border: 1px solid black;
     color: $gold;
-    text-transform: uppercase;
-    font-size: 1rem;
     float: right;
-    width: 120px;
+    font-size: 1rem;
     margin-right: 65px;
     max-width: inherit;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 120px;
+
     &:hover {
-      background-color: darken($green, 20);
+        background-color: darken($green, 20);
     }
 }

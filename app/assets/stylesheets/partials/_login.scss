@@ -1,4 +1,3 @@
-
 .login-form {
     margin: 5px auto;
     min-height: 300px;
@@ -22,19 +21,21 @@
 
     button {
         @include btn;
+        background: rgba($orange, .9);
+        color: $brown;
         border: none;
         display: block;
         font: 700 1.4rem/1 $pop;
         margin: 10px auto;
         max-width: 200px;
         padding: 20px;
-        background-color: $orange;
-        color: $brown;
     }
+
     .new-acct-btn {
-      font: 400 1rem/1 $pop;
-      padding: 10px;
-      background-color: rgba($brown, .7);
-      color: $gold;
+        @include btn;
+        font: 400 1rem/1 $pop;
+        margin: 0 auto;
+        padding: 10px;
+        max-width: 200px;
     }
 }
