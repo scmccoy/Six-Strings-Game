@@ -7,8 +7,8 @@ BELLE:Likes books,TIANA:Aspiring chef,MERIDA:Ace archer,JASMINE:Looking for a ne
 VIRGO:The Maiden,LIBRA:The Scales,GEMINI:The Twins,SCORPIO:The Scorpion,AQUARIUS:The Water-Bearer,CAPRICORN:The Sea-Goat
 THERE:!("here"),INERT:!("moving"),LIQUID:!("solid" || "gas"),DOROTHY:!("in Kansas anymore"),CLINTON:!("president"),DARKNESS:!("light")
 HELLO:English greeting,ALOHA:Hawaiian greeting,OHAYOU:Japanese greeting,ANNYONG:Korean greeting,PRIVETIK:Russian greeting,VELKOMMEN:Danish greeting
-SHEEP:Origin of wool,FENCE:Prevent loss of cattle,GRAPES:Makes wine,CHICKEN:Can run without head,HENHOUSE:where eggs are laid,LIVESTOCK:animals on the farm
-SPOCK:Famous vulcan,JAMES:Blank T Kirk,PHASER:Set to stun,BATLETH:Klingon weapon of choice,MINDMELD:union of minds,TRICORDER:the device that does everything
-FRODO:famous hobbit,DWARF:lives underground,SHELOB:Giant spider,TOLKIEN:famous author(Lord of the Rings),HOBBITON:home of the hobbits,OBEISANCE:wormwood to Saruman
-MAGIC:ask drew about angular,DOBBY:happily freed house-elf,MINISTRY: blank of Magic,SNITCH:150pts - ends the game,SEVERUS:the potions master,QUIDDITCH:game of brooms
+SHEEP:Origin of wool,FENCE:Prevent loss of cattle,GRAPES:Makes wine,CHICKEN:Can run without head,HENHOUSE:Where eggs are laid,LIVESTOCK:Animals on the farm
+SPOCK:Famous vulcan,JAMES:"Blank" T Kirk,PHASER:Set to stun,BATLETH:Klingon weapon of choice,MINDMELD:Union of minds,TRICORDER:The device that does everything
+FRODO:Famous hobbit,DWARF:Lives underground,SHELOB:Giant spider,TOLKIEN:Famous author(Lord of the Rings),HOBBITON:Home of the hobbits,OBEISANCE:Wormwood to Saruman
+MAGIC:Ask drew about angular,DOBBY:Happily freed house-elf,MINISTRY: 'BLANK' of Magic,SNITCH:150pts - Ends the game,SEVERUS:The potions master,QUIDDITCH:Game of brooms
 HOUSE:Place where people live,GRAVE:Place where zombies live,CASTLE:Place where kings live,LIBRARY:Place where books live,INTERNET:Place where trolls live,EDITORIAL:Place where opinions live
