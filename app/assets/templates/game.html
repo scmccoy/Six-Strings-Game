@@ -11,10 +11,11 @@
                 <th class="word-heading">solutions</th>
             </tr>
 
-            <tr class="word-row-words" ng-repeat="(key, value) in testing">
+            <tr class="word-row-words" ng-repeat="(key, value) in currentObj">
                 <td>{{$index + 1}}</td>
                 <td class="word-clues">{{value}}</td>
                 <td class="word-word">{{key.length}} Letters</td>
+                <td class="word-word-length no-display">{{key}}</td>
             </tr>
 
         </table>

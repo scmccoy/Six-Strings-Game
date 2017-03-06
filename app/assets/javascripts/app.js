@@ -1,10 +1,10 @@
 // ['ui.router', 'templates']
-( function( ng ) {
+(function(ng) {
 	"use strict";
 
-	ng.module( 'sixStringApp', [ 'ui.router', 'templates', 'LocalStorageModule' ] );
+	ng.module('sixStringApp', ['ui.router', 'templates', 'LocalStorageModule']);
 
-	ng.module( 'sixStringApp' ).config( function( $stateProvider, $urlRouterProvider ) {
+	ng.module('sixStringApp').config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/');
 
@@ -40,7 +40,7 @@
 			url: 'win',
 			controller: 'WinController as winCtrl',
 			templateUrl: 'win.html'
-		} );
-	} );
+		});
+	});
 
-} )( angular );
+})(angular);
