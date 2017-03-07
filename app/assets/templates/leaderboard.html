@@ -9,10 +9,10 @@
       <th class="leaderboard-heading">username</th>
       <th class="leaderboard-heading">time</th>
     </tr>
-    <tr ng-repeat='baboon in leadData'>
+    <tr ng-repeat='score in leadData'>
       <td>{{$index + 1}}</td>
-      <td>{{baboon.username}}</td>
-      <td>{{baboon.score}} sec</td>
+      <td>{{score.username}}</td>
+      <td>{{score.score}} sec</td>
     </tr>
   </table>
   <button <a ui-sref='gameParent.game'>play again</a></button>

@@ -8,6 +8,9 @@
     }
 
     table {
+      @include bp(mobile) {
+        width:300px;
+      }
         border-bottom: 2px solid $brown;
         margin: 0 auto;
         width: 400px;
