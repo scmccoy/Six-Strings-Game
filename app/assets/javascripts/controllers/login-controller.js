@@ -23,15 +23,19 @@
 
 			localStorageService.set( 'login', $scope.inputInfo );
 
-			$q.when(dataService.post(url, $scope.inputInfo)).then((response) => {
+			$q.when(dataService.post(url, $scope.inputInfo))
+			.then((response) => {
 				$scope.currUser = response.data.data;
 				localStorageService.set( 'login', $scope.currUser );
 				localStorageService.set( 'gameswon', $scope.currUser.games_won );
+				$state.go( 'gameParent.game' );
+
 			}).catch((error) => {
+				$('p.incorrect-login').text('incorrect login | try again');
+				$('#loginForm').trigger('reset');
 				console.log(error);
 			});
 
-		$state.go( 'gameParent.game' );
 };
 
 $scope.userLogout = function() {

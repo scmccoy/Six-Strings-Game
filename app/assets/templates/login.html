@@ -8,6 +8,7 @@
     <h2>log me in</h2>
     <input ng-model="inputInfo.email" type="email" placeholder="email" required>
     <input ng-model="inputInfo.password" type="password" placeholder="password" required>
+    <p class="incorrect-login"></p>
     <button type="submit" ng-submit="userSubmit('old')">login</button>
     <button class='new-acct-btn' ui-sref='gameParent.newuser'>oops, I do need a new account</button>
   </form>
