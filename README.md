@@ -2,6 +2,8 @@
 
 is a word game. [Check it out on Heroku!](https://sixstrings.herokuapp.com/)
 
+Developed with Angular JS, JavaScript ES6, Ruby on Rails, HTML5, CSS, and SASS. 
+
 ## How to play
 
 1. Find the 6 words to match the six clues.
